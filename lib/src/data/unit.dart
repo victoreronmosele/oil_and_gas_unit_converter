@@ -1,4 +1,4 @@
-enum Unit {
+enum Unit  {
   meterPerSecond,
   feetPerDay,
 }

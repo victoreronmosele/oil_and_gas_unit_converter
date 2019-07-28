@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:oil_and_gas_unit_converter/src/model/unit.dart';
+import 'package:oil_and_gas_unit_converter/src/data/unit.dart';
 
 class Converter {
   num convert({@required num value, @required Unit from, @required Unit to}) {
