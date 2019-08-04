@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions/basic_conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions/drilling_conversions.dart';
@@ -13,6 +11,9 @@ import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/area.dart'
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/cost_rate.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/decimal_number_prefix.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/density.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/distributed_force.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/energy.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/flowrate_mass.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -46,7 +47,18 @@ void main() {
           DecimalNumberPrefix.values, decimalNumberPrefixValuesMap);
       bool allDensityEnumsAreMapped =
           areAllEnumsMappedToString(Density.values, densityValuesMap);
+      bool allDistributedForcesEnumsAreMapped =
+          areAllEnumsMappedToString<DistributedForce>(
+              DistributedForce.values, distributedForceValuesMap);
+      bool allEnergyEnumsAreMapped =
+          areAllEnumsMappedToString<Energy>(Energy.values, energyValuesMap);
+      bool allFlowrateMassEnumsAreMapped =
+          areAllEnumsMappedToString<FlowrateMass>(
+              FlowrateMass.values, flowrateMassValuesMap);
 
+      expect(allFlowrateMassEnumsAreMapped, true);
+      expect(allEnergyEnumsAreMapped, true);
+      expect(allDistributedForcesEnumsAreMapped, true);
       expect(allConversionsEnumsAreMapped, true);
       expect(allBasicConversionsEnumsAreMapped, true);
       expect(allGasConversionsEnumsAreMapped, true);
@@ -67,7 +79,11 @@ void main() {
 bool areAllEnumsMappedToString<T>(
     List<T> enumValues, Map<T, String> enumValuesMap) {
   bool allEnumsAreMapped = enumValues.every((enumValue) {
-    return enumValuesMap.containsKey(enumValue);
+    bool enumValueIsMapped = enumValuesMap.containsKey(enumValue);
+
+    if (enumValueIsMapped == false) print('$enumValue is not mapped');
+
+    return enumValueIsMapped;
   });
   return allEnumsAreMapped;
 }
