@@ -1,0 +1,37 @@
+enum FlowrateVolume {
+  barrelsPerDay,
+  barrelsPerHour,
+  barrelsPerMinute,
+  barrelsPerSecond,
+  cubicFeetPerDay,
+  cubicFeetPerHour,
+  cubicFeetPerMinute,
+  cubicFeetPerSecond,
+  cubicMeterPerMinute,
+  cubicMetersPerDay,
+  cubicMetersPerHour,
+  cubicMetersPerSecond,
+  gallonsPerDay,
+  gallonsPerHour,
+  gallonsPerMinute,
+  gallonsPerSecond
+}
+
+Map<FlowrateVolume, String> flowrateVolumeValuesMap = {
+  FlowrateVolume.barrelsPerDay: 'Barrels per Day(BPD)',
+  FlowrateVolume.barrelsPerHour: 'Barrels per Hour(BPH)',
+  FlowrateVolume.barrelsPerMinute: 'Barrels per Minute(BPM)',
+  FlowrateVolume.barrelsPerSecond: 'Barrels per Second(BPS)',
+  FlowrateVolume.cubicFeetPerDay: 'Cubic Feet per Day(ft3/day)',
+  FlowrateVolume.cubicFeetPerHour: 'Cubic Feet per Hour(ft3/hr)',
+  FlowrateVolume.cubicFeetPerMinute: 'Cubic Feet per Minute(ft3/min)',
+  FlowrateVolume.cubicFeetPerSecond: 'Cubic Feet per Second(ft3/sec)',
+  FlowrateVolume.cubicMeterPerMinute: 'Cubic Meter per Minute(m3/min)',
+  FlowrateVolume.cubicMetersPerDay: 'Cubic Meters per Day(m3/day)',
+  FlowrateVolume.cubicMetersPerHour: 'Cubic Meters per Hour(m3/hr)',
+  FlowrateVolume.cubicMetersPerSecond: 'Cubic Meters per Second(m3/sec) ',
+  FlowrateVolume.gallonsPerDay: 'Gallons per Day(gal/day)',
+  FlowrateVolume.gallonsPerHour: 'Gallons per Hour(gph)',
+  FlowrateVolume.gallonsPerMinute: 'Gallons per Minute(gpm)',
+  FlowrateVolume.gallonsPerSecond: 'Gallons per Second(gal/sec)',
+};

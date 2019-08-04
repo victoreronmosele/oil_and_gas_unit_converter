@@ -1,0 +1,35 @@
+enum Length {
+  centimeter,
+  decimeter,
+  dekameter,
+  fathom,
+  feet,
+  hectometer,
+  inch,
+  kilometer,
+  league,
+  meter,
+  miles,
+  millimeter,
+  nauticalLeague,
+  nauticalMile,
+  yard
+}
+
+Map<Length, String> lengthValuesMap = {
+  Length.centimeter: 'Centimeter(cm)',
+  Length.decimeter: 'Decimeter(dm)',
+  Length.dekameter: 'Dekameter(dam)',
+  Length.fathom: 'Fathom(fath)',
+  Length.feet: 'Feet(ft)',
+  Length.hectometer: 'Hectometer(hm)',
+  Length.inch: 'Inch(in)',
+  Length.kilometer: 'Kilometer(km)',
+  Length.league: 'League(leag)',
+  Length.meter: 'Meter(m)',
+  Length.miles: 'Miles(mi)',
+  Length.millimeter: 'Millimeter(mm)',
+  Length.nauticalLeague: 'Nautical League(nleag)',
+  Length.nauticalMile: 'Nautical Mile(nm)',
+  Length.yard: 'Yard(yd)',
+};

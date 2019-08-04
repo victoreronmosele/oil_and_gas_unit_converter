@@ -14,6 +14,9 @@ import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/density.da
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/distributed_force.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/energy.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/flowrate_mass.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/flowrate_volume.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/frequency.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/length.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -55,7 +58,17 @@ void main() {
       bool allFlowrateMassEnumsAreMapped =
           areAllEnumsMappedToString<FlowrateMass>(
               FlowrateMass.values, flowrateMassValuesMap);
+      bool allFlowrateVolumeEnumsAreMapped =
+          areAllEnumsMappedToString<FlowrateVolume>(
+              FlowrateVolume.values, flowrateVolumeValuesMap);
+      bool allFrequencyEnumsAreMapped = areAllEnumsMappedToString<Frequency>(
+          Frequency.values, frequencyValuesMap);
+      bool allLengthEnumsAreMapped =
+          areAllEnumsMappedToString<Length>(Length.values, lengthValuesMap);
 
+      expect(allLengthEnumsAreMapped, true);
+      expect(allFrequencyEnumsAreMapped, true);
+      expect(allFlowrateVolumeEnumsAreMapped, true);
       expect(allFlowrateMassEnumsAreMapped, true);
       expect(allEnergyEnumsAreMapped, true);
       expect(allDistributedForcesEnumsAreMapped, true);
