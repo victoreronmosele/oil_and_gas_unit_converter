@@ -17,6 +17,12 @@ import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/flowrate_m
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/flowrate_volume.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/frequency.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/length.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/momentum.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/pressure.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/time.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/torque.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight_per_unit_length.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -65,7 +71,27 @@ void main() {
           Frequency.values, frequencyValuesMap);
       bool allLengthEnumsAreMapped =
           areAllEnumsMappedToString<Length>(Length.values, lengthValuesMap);
+      bool allMomentumEnumsAreMapped = areAllEnumsMappedToString<Momentum>(
+          Momentum.values, momentumValuesMap);
+      bool allPressureEnumsAreMapped = areAllEnumsMappedToString<Pressure>(
+          Pressure.values, pressureValuesMap);
+      bool allTimeEnumsAreMapped =
+          areAllEnumsMappedToString<Time>(Time.values, timeValuesMap);
+      bool allTorqueEnumsAreMapped =
+          areAllEnumsMappedToString<Torque>(Torque.values, torqueValuesMap);
+      bool allWeightEnumsAreMapped =
+          areAllEnumsMappedToString<Weight>(Weight.values, weightValuesMap);
+      bool allWeightPerUnitLengthEnumsAreMapped =
+          areAllEnumsMappedToString<WeightPerUnitLength>(
+              WeightPerUnitLength.values, weightPerUnitLengthValuesMap);
 
+      expect(allWeightPerUnitLengthEnumsAreMapped, true);
+      expect(allWeightEnumsAreMapped, true);
+
+      expect(allTorqueEnumsAreMapped, true);
+      expect(allTimeEnumsAreMapped, true);
+      expect(allPressureEnumsAreMapped, true);
+      expect(allMomentumEnumsAreMapped, true);
       expect(allLengthEnumsAreMapped, true);
       expect(allFrequencyEnumsAreMapped, true);
       expect(allFlowrateVolumeEnumsAreMapped, true);
