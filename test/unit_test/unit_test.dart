@@ -21,8 +21,16 @@ import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/momentum.d
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/pressure.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/time.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/torque.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/volume.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight_per_unit_length.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_injection_rate.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_production_index.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_production_rate.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_volume.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/liquefied_natural_gas.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/specific_volume.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/volume.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -79,15 +87,44 @@ void main() {
           areAllEnumsMappedToString<Time>(Time.values, timeValuesMap);
       bool allTorqueEnumsAreMapped =
           areAllEnumsMappedToString<Torque>(Torque.values, torqueValuesMap);
+      bool allVolumeBasicEnumsAreMapped =
+          areAllEnumsMappedToString<VolumeBasic>(
+              VolumeBasic.values, volumeBasicValuesMap);
       bool allWeightEnumsAreMapped =
           areAllEnumsMappedToString<Weight>(Weight.values, weightValuesMap);
       bool allWeightPerUnitLengthEnumsAreMapped =
           areAllEnumsMappedToString<WeightPerUnitLength>(
               WeightPerUnitLength.values, weightPerUnitLengthValuesMap);
+      bool allGasInjectionRateEnumsAreMapped =
+          areAllEnumsMappedToString<GasInjectionRate>(
+              GasInjectionRate.values, gasInjectionRateValuesMap);
+      bool allGasProductionIndexEnumsAreMapped =
+          areAllEnumsMappedToString<GasProductionIndex>(
+              GasProductionIndex.values, gasProductionIndexValuesMap);
+      bool allGasVolumeEnumsAreMapped = areAllEnumsMappedToString<GasVolume>(
+          GasVolume.values, gasVolumeValuesMap);
+      bool allGasProductionRateEnumsAreMapped =
+          areAllEnumsMappedToString<GasProductionRate>(
+              GasProductionRate.values, gasProductionRateValuesMap);
+      bool allLiquefiedNaturalGasEnumsAreMapped =
+          areAllEnumsMappedToString<LiquefiedNaturalGas>(
+              LiquefiedNaturalGas.values, liquefiedNaturalGasValuesMap);
+      bool allSpecificVolumeEnumsAreMapped =
+          areAllEnumsMappedToString<SpecificVolume>(
+              SpecificVolume.values, specificVolumeValuesMap);
+      bool allVolumeGasEnumsAreMapped = areAllEnumsMappedToString<VolumeGas>(
+          VolumeGas.values, volumeGasValuesMap);
 
+      expect(allVolumeGasEnumsAreMapped, true);
+      expect(allSpecificVolumeEnumsAreMapped, true);
+      expect(allLiquefiedNaturalGasEnumsAreMapped, true);
+      expect(allGasVolumeEnumsAreMapped, true);
+      expect(allGasProductionRateEnumsAreMapped, true);
+      expect(allGasProductionIndexEnumsAreMapped, true);
+      expect(allGasInjectionRateEnumsAreMapped, true);
       expect(allWeightPerUnitLengthEnumsAreMapped, true);
       expect(allWeightEnumsAreMapped, true);
-
+      expect(allVolumeBasicEnumsAreMapped, true);
       expect(allTorqueEnumsAreMapped, true);
       expect(allTimeEnumsAreMapped, true);
       expect(allPressureEnumsAreMapped, true);
@@ -117,10 +154,12 @@ void main() {
 
 bool areAllEnumsMappedToString<T>(
     List<T> enumValues, Map<T, String> enumValuesMap) {
-  bool allEnumsAreMapped = enumValues.every((enumValue) {
-    bool enumValueIsMapped = enumValuesMap.containsKey(enumValue);
+  bool allEnumsAreMapped = enumValues.every((enumKey) {
+    String value = enumValuesMap[enumKey];
 
-    if (enumValueIsMapped == false) print('$enumValue is not mapped');
+    bool enumValueIsMapped =
+        enumValuesMap.containsKey(enumKey) && value.isNotEmpty;
+    if (enumValueIsMapped == false) print('$enumKey fails test');
 
     return enumValueIsMapped;
   });
