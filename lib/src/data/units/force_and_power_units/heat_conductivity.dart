@@ -1,0 +1,9 @@
+enum HeatConductivity {
+  britishThermalUnitsPerHourFeetDegreeFarenheit,
+  wattPerMeterCelsius
+}
+
+Map<HeatConductivity, String> heatConductivityValuesMap = {
+  HeatConductivity.britishThermalUnitsPerHourFeetDegreeFarenheit: 'British Thermal Units per Hour -Feet -Degree Farenheit(Btu/hr-ft-F)',
+  HeatConductivity.wattPerMeterCelsius: 'Watt per Meter Celsius(W/m-C)',
+};
