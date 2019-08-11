@@ -24,6 +24,12 @@ import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/torque.dar
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/volume.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight_per_unit_length.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/crude_oil.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_consistency.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_velocity.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_yield_point.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/liquid_production_rate.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/viscosiity.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_injection_rate.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_production_index.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_production_rate.dart';
@@ -114,7 +120,29 @@ void main() {
               SpecificVolume.values, specificVolumeValuesMap);
       bool allVolumeGasEnumsAreMapped = areAllEnumsMappedToString<VolumeGas>(
           VolumeGas.values, volumeGasValuesMap);
+      bool allCrudeOilEnumsAreMapped = areAllEnumsMappedToString<CrudeOil>(
+          CrudeOil.values, crudeOilValuesMap);
+      bool allFluidConsistencyEnumsAreMapped =
+          areAllEnumsMappedToString<FluidConsistency>(
+              FluidConsistency.values, fluidConsistencyValuesMap);
+      bool allFluidVelocityEnumsAreMapped =
+          areAllEnumsMappedToString<FluidVelocity>(
+              FluidVelocity.values, fluidVelocityValuesMap);
+      bool allFluidYieldPointEnumsAreMapped =
+          areAllEnumsMappedToString<FluidYieldPoint>(
+              FluidYieldPoint.values, fluidYieldPointValuesMap);
+      bool allLiquidProductionRateEnumsAreMapped =
+          areAllEnumsMappedToString<LiquidProductionRate>(
+              LiquidProductionRate.values, liquidProductionRateValuesMap);
+      bool allViscosityEnumsAreMapped = areAllEnumsMappedToString<Viscosity>(
+          Viscosity.values, viscosityValuesMap);
 
+      expect(allViscosityEnumsAreMapped, true);
+      expect(allLiquidProductionRateEnumsAreMapped, true);
+      expect(allFluidYieldPointEnumsAreMapped, true);
+      expect(allFluidVelocityEnumsAreMapped, true);
+      expect(allFluidConsistencyEnumsAreMapped, true);
+      expect(allCrudeOilEnumsAreMapped, true);
       expect(allVolumeGasEnumsAreMapped, true);
       expect(allSpecificVolumeEnumsAreMapped, true);
       expect(allLiquefiedNaturalGasEnumsAreMapped, true);
@@ -159,7 +187,7 @@ bool areAllEnumsMappedToString<T>(
 
     bool enumValueIsMapped =
         enumValuesMap.containsKey(enumKey) && value.isNotEmpty;
-    if (enumValueIsMapped == false) print('$enumKey fails test');
+    if (enumValueIsMapped == false) print('$enumKey in $enumValuesMap fails test');
 
     return enumValueIsMapped;
   });
