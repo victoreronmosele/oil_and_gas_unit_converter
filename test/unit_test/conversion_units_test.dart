@@ -24,6 +24,17 @@ import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/torque.dar
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/volume.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/basic_units/weight_per_unit_length.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/axial_dampling_coefficient.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/axial_spring_constant.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/dogleg.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/drilling_rate.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/footage_cost.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/mud_weight.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/pressure_gradient.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/pumping_and_flow_rate.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/torsional_dampling_coefficient.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/torsional_spring_constant.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/drilling_units/yield_slurry.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/crude_oil.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_consistency.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_velocity.dart';
@@ -191,6 +202,53 @@ void main() {
       bool allVelocityAngularEnumsAreMapped =
           areAllEnumsValuesMappedToString<VelocityAngular>(
               VelocityAngular.values, velocityAngularValuesMap);
+
+      bool allAxialDamplingCoefficientEnumsAreMapped =
+          areAllEnumsValuesMappedToString<AxialDamplingCoefficient>(
+              AxialDamplingCoefficient.values,
+              axialDamplingCoefficientValuesMap);
+      bool allAxialSpringConstantEnumsAreMapped =
+          areAllEnumsValuesMappedToString<AxialSpringConstant>(
+              AxialSpringConstant.values, axialSpringConstantValuesMap);
+      bool allDoglegEnumsAreMapped = areAllEnumsValuesMappedToString<Dogleg>(
+          Dogleg.values, doglegValuesMap);
+      bool allDrillingRateEnumsAreMapped =
+          areAllEnumsValuesMappedToString<DrillingRate>(
+              DrillingRate.values, drillingRateValuesMap);
+      bool allFootageCostEnumsAreMapped =
+          areAllEnumsValuesMappedToString<FootageCost>(
+              FootageCost.values, footageCostValuesMap);
+      bool allMudWeightEnumsAreMapped =
+          areAllEnumsValuesMappedToString<MudWeight>(
+              MudWeight.values, mudWeightValuesMap);
+      bool allPressureGradientEnumsAreMapped =
+          areAllEnumsValuesMappedToString<PressureGradient>(
+              PressureGradient.values, pressureGradientValuesMap);
+      bool allPumpingAndFlowRateEnumsAreMapped =
+          areAllEnumsValuesMappedToString<PumpingAndFlowRate>(
+              PumpingAndFlowRate.values, pumpingAndFlowRateValuesMap);
+      bool allTorsionalDampingCoefficientEnumsAreMapped =
+          areAllEnumsValuesMappedToString<TorsionalDamplingCoefficient>(
+              TorsionalDamplingCoefficient.values,
+              torsionalDamplingCoefficientValuesMap);
+      bool allTorsionalSpringConstantEnumsAreMapped =
+          areAllEnumsValuesMappedToString<TorsionalSpringConstant>(
+              TorsionalSpringConstant.values, torsionalSpringConstantValuesMap);
+      bool allYieldSlurryEnumsAreMapped =
+          areAllEnumsValuesMappedToString<YieldSlurry>(
+              YieldSlurry.values, yieldSlurryValuesMap);
+
+      expect(allAxialDamplingCoefficientEnumsAreMapped, true);
+      expect(allAxialSpringConstantEnumsAreMapped, true);
+      expect(allDoglegEnumsAreMapped, true);
+      expect(allDrillingRateEnumsAreMapped, true);
+      expect(allFootageCostEnumsAreMapped, true);
+      expect(allMudWeightEnumsAreMapped, true);
+      expect(allPressureGradientEnumsAreMapped, true);
+      expect(allPumpingAndFlowRateEnumsAreMapped, true);
+      expect(allTorsionalDampingCoefficientEnumsAreMapped, true);
+      expect(allTorsionalSpringConstantEnumsAreMapped, true);
+      expect(allYieldSlurryEnumsAreMapped, true);
 
       expect(allVelocityAngularEnumsAreMapped, true);
       expect(allVelocityEnumsAreMapped, true);
