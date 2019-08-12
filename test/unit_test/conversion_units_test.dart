@@ -42,6 +42,7 @@ import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_yiel
 import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/liquid_production_rate.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/viscosiity.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/force_and_power_units/electric_current.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/force_and_power_units/force.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/force_and_power_units/fracture_conductivity.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/force_and_power_units/fuel_volume.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/force_and_power_units/heat_capacity.dart';
@@ -57,7 +58,18 @@ import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/gas_volume.d
 import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/liquefied_natural_gas.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/specific_volume.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/volume.dart';
-import 'package:oil_and_gas_unit_converter/src/data/units/force_and_power_units/force.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/nozzle_size.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/nozzle_speed.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/oil_production_index.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/permeability.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/pipe_capacity.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/production_rate.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/rotation.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/section_modulus.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/section_modulus_moment_of_section.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/stress_elastic_modulus.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/stroke_rate.dart';
+import 'package:oil_and_gas_unit_converter/src/data/units/production_units/stroke_volume.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -173,7 +185,6 @@ void main() {
       bool allViscosityEnumsAreMapped =
           areAllEnumsValuesMappedToString<Viscosity>(
               Viscosity.values, viscosityValuesMap);
-
       bool allElectricCurrentEnumsAreMapped =
           areAllEnumsValuesMappedToString<ElectricCurrent>(
               ElectricCurrent.values, electricCurrentValuesMap);
@@ -202,7 +213,6 @@ void main() {
       bool allVelocityAngularEnumsAreMapped =
           areAllEnumsValuesMappedToString<VelocityAngular>(
               VelocityAngular.values, velocityAngularValuesMap);
-
       bool allAxialDamplingCoefficientEnumsAreMapped =
           areAllEnumsValuesMappedToString<AxialDamplingCoefficient>(
               AxialDamplingCoefficient.values,
@@ -237,7 +247,56 @@ void main() {
       bool allYieldSlurryEnumsAreMapped =
           areAllEnumsValuesMappedToString<YieldSlurry>(
               YieldSlurry.values, yieldSlurryValuesMap);
+      bool allNozzleSizeEnumsAreMapped =
+          areAllEnumsValuesMappedToString<NozzleSize>(
+              NozzleSize.values, nozzleSizeValuesMap);
+      bool allNozzleSpeedEnumsAreMapped =
+          areAllEnumsValuesMappedToString<NozzleSpeed>(
+              NozzleSpeed.values, nozzleSpeedValuesMap);
+      bool allOilProductionIndexEnumsAreMapped =
+          areAllEnumsValuesMappedToString<OilProductionIndex>(
+              OilProductionIndex.values, oilProductionIndexValuesMap);
+      bool allPermeabilityEnumsAreMapped =
+          areAllEnumsValuesMappedToString<Permeability>(
+              Permeability.values, permeabilityValuesMap);
+      bool allPipeCapacityEnumsAreMapped =
+          areAllEnumsValuesMappedToString<PipeCapacity>(
+              PipeCapacity.values, pipeCapacityValuesMap);
+      bool allProductionRateEnumsAreMapped =
+          areAllEnumsValuesMappedToString<ProductionRate>(
+              ProductionRate.values, productionRateValuesMap);
+      bool allRotationEnumsAreMapped =
+          areAllEnumsValuesMappedToString<Rotation>(
+              Rotation.values, rotationValuesMap);
+      bool allSectionModulusEnumsAreMapped =
+          areAllEnumsValuesMappedToString<SectionModulus>(
+              SectionModulus.values, sectionModulusValuesMap);
+      bool allSectionModulusMomentOfSectionEnumsAreMapped =
+          areAllEnumsValuesMappedToString<SectionModulusMomentOfSection>(
+              SectionModulusMomentOfSection.values,
+              sectionModulusMomentOfSectionValuesMap);
+      bool allStressElasticModulusEnumsAreMapped =
+          areAllEnumsValuesMappedToString<StressElasticModulus>(
+              StressElasticModulus.values, stressElasticModulusValuesMap);
+      bool allStrokeRateEnumsAreMapped =
+          areAllEnumsValuesMappedToString<StrokeRate>(
+              StrokeRate.values, strokeRateValuesMap);
+      bool allStrokeVolumeEnumsAreMapped =
+          areAllEnumsValuesMappedToString<StrokeVolume>(
+              StrokeVolume.values, strokeVolumeValuesMap);
 
+      expect(allNozzleSizeEnumsAreMapped, true);
+      expect(allNozzleSpeedEnumsAreMapped, true);
+      expect(allOilProductionIndexEnumsAreMapped, true);
+      expect(allPermeabilityEnumsAreMapped, true);
+      expect(allPipeCapacityEnumsAreMapped, true);
+      expect(allProductionRateEnumsAreMapped, true);
+      expect(allRotationEnumsAreMapped, true);
+      expect(allSectionModulusEnumsAreMapped, true);
+      expect(allSectionModulusMomentOfSectionEnumsAreMapped, true);
+      expect(allStressElasticModulusEnumsAreMapped, true);
+      expect(allStrokeRateEnumsAreMapped, true);
+      expect(allStrokeVolumeEnumsAreMapped, true);
       expect(allAxialDamplingCoefficientEnumsAreMapped, true);
       expect(allAxialSpringConstantEnumsAreMapped, true);
       expect(allDoglegEnumsAreMapped, true);
@@ -249,7 +308,6 @@ void main() {
       expect(allTorsionalDampingCoefficientEnumsAreMapped, true);
       expect(allTorsionalSpringConstantEnumsAreMapped, true);
       expect(allYieldSlurryEnumsAreMapped, true);
-
       expect(allVelocityAngularEnumsAreMapped, true);
       expect(allVelocityEnumsAreMapped, true);
       expect(allPowerArewEnumsAreMapped, true);
