@@ -1,25 +1,18 @@
 import 'package:meta/meta.dart';
-import 'package:oil_and_gas_unit_converter/src/model/conversion.dart';
 import 'package:oil_and_gas_unit_converter/src/model/unit.dart';
 
 class Converter {
-  num convert(
-      {@required num value,
-      @required Unit from,
-      @required Unit to,
-      @required Conversion conversionType}) {
-    num factor = getFactor(from: from, to: to, conversionType: conversionType);
+  num convert<T>(
+      {@required num value, @required T from, @required T to, Unit unit}) {
+    num factor = getFactor(from: from, to: to, unit: unit);
     num convertedResult = value * factor;
 
     return convertedResult;
   }
 
-  num getFactor(
-      {@required Unit from,
-      @required Unit to,
-      @required Conversion conversionType}) {
+  num getFactor<T>({@required T from, @required T to, Unit unit}) {
     num factor;
-
+    factor = unit.unitFactorMap[to] / unit.unitFactorMap[from];
     return factor;
   }
 }

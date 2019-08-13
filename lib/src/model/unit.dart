@@ -1,3 +1,5 @@
-abstract class Unit {
-  List units;
+ class Unit<T> {
+   Map unitValuesMap;
+   Map unitFactorMap;
 }
+
