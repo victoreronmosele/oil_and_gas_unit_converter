@@ -15,3 +15,12 @@ Map<Momentum, String> momentumValuesMap = {
   Momentum.poundFootPerSecond: 'Pound-Foot per Second(lb.ft/sec)',
   Momentum.poundInchPerSecond: 'Pound-Inch per Second(lb.in/sec) ',
 };
+
+Map<Momentum, num> momentumFactorMap = {
+  Momentum.gramCentimeterPerSecond: 1,
+  Momentum.kilogramMeterPerHour: 0.036,
+  Momentum.kilogramMeterPerSecond: 0.00001,
+  Momentum.poundFootPerHour: 0.2603885,
+  Momentum.poundFootPerSecond: 0.0000723,
+  Momentum.poundInchPerSecond: 0.000868,
+};

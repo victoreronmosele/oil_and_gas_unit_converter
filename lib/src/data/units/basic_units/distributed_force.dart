@@ -15,3 +15,12 @@ Map<DistributedForce, String> distributedForceValuesMap = {
   DistributedForce.newtonPerMeter: 'Newton per Meter(N/m)',
   DistributedForce.poundforcePerFeet: 'Poundforce per Feet(lbf/ft)'
 };
+
+Map<DistributedForce, num> distributedForceFactorMap = {
+  DistributedForce.dekaNewtonPerMeter: 1,
+  DistributedForce.kilogramPerMeter: 1.0195177,
+  DistributedForce.kiloNewtonPerCentimeter: 0.0001,
+  DistributedForce.kilopoundPerInch: 0.0000571,
+  DistributedForce.newtonPerMeter: 9.9999708,
+  DistributedForce.poundforcePerFeet: 0.685068,
+};

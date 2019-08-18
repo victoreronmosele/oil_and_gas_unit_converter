@@ -35,3 +35,22 @@ Map<FlowrateVolume, String> flowrateVolumeValuesMap = {
   FlowrateVolume.gallonsPerMinute: 'Gallons per Minute(gpm)',
   FlowrateVolume.gallonsPerSecond: 'Gallons per Second(gal/sec)',
 };
+
+Map<FlowrateVolume, num> flowrateVolumeFactorMap = {
+  FlowrateVolume.barrelsPerDay : 1, 
+   FlowrateVolume.barrelsPerHour :0.0416667 , 
+   FlowrateVolume.barrelsPerMinute : 0.0006944, 
+   FlowrateVolume.barrelsPerSecond : 0.0000116, 
+   FlowrateVolume.cubicFeetPerDay : 5.6145928, 
+   FlowrateVolume.cubicFeetPerHour : 0.2339414, 
+   FlowrateVolume.cubicFeetPerMinute : 0.003899, 
+   FlowrateVolume.cubicFeetPerSecond : 0.000065, 
+   FlowrateVolume.cubicMeterPerMinute : 0.0001104, 
+   FlowrateVolume.cubicMetersPerDay : 0.1589873, 
+   FlowrateVolume.cubicMetersPerHour : 0.0066245, 
+   FlowrateVolume.cubicMetersPerSecond : 0.0000018, 
+   FlowrateVolume.gallonsPerDay :42.0000211 , 
+   FlowrateVolume.gallonsPerHour : 1.7500009, 
+   FlowrateVolume.gallonsPerMinute : 0.0291667, 
+   FlowrateVolume.gallonsPerSecond : 0.0004861, 
+   };

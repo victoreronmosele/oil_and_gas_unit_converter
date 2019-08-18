@@ -45,3 +45,27 @@ Map<FlowrateMass, String> flowrateMassValuesMap = {
   FlowrateMass.tonShortPerHour: 'Ton (Short) per Hour(ton/hr)',
   FlowrateMass.tonShortPerMinute: 'Ton (Short) per Minute(ton/min)',
 };
+
+Map<FlowrateMass, num> flowrateMassFactorMap = {
+  FlowrateMass.gramPerDay: 1,
+  FlowrateMass.gramPerHour: 0.0416667,
+  FlowrateMass.gramPerMinute: 0.0006944,
+  FlowrateMass.gramPerSecond: 0.0000116,
+  FlowrateMass.kilogramPerDay: 0.001,
+  FlowrateMass.kilogramPerHour: 0.0000417,
+  FlowrateMass.kilogramPerMinute: 0,
+  FlowrateMass.kilogramPerSecond: 0,
+  FlowrateMass.poundPerDay: 0.0022046,
+  FlowrateMass.poundPerHour: 0.0000919,
+  FlowrateMass.poundPerMinute: 0.0000015,
+  FlowrateMass.poundPerSecond: 0,
+  FlowrateMass.tonLongPerDay: 0.000001,
+  FlowrateMass.tonLongPerHour: 0,
+  FlowrateMass.tonLongPerMinute: 0,
+  FlowrateMass.tonMetricPerDay: 0.000001,
+  FlowrateMass.tonMetricPerHour: 0,
+  FlowrateMass.tonMetricPerMinute: 0,
+  FlowrateMass.tonShortPerDay: 0.0000011,
+  FlowrateMass.tonShortPerHour: 0,
+  FlowrateMass.tonShortPerMinute: 0,
+};

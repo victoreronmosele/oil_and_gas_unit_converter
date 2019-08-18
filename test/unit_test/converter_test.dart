@@ -12,6 +12,7 @@ void main() {
     test('Converter works properly', () {
       Converter converter = Converter();
       num valueToBeConverted = 100;
+      num expectedValue = 3047.999902464003;
 
       var convertedValue = converter.convert<Acceleration>(
           value: valueToBeConverted,
@@ -19,7 +20,7 @@ void main() {
           to: Acceleration.footPerSquareSecond,
           unit: BasicConversionType().getUnit(BasicConversions.acceleration));
 
-      expect(convertedValue, 3048);
+      expect(convertedValue, expectedValue);
     });
   });
 

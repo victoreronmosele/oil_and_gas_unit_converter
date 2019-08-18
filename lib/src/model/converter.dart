@@ -12,7 +12,7 @@ class Converter {
 
   num getFactor<T>({@required T from, @required T to, Unit unit}) {
     num factor;
-    factor = unit.unitFactorMap[to] / unit.unitFactorMap[from];
+    factor = 1 / (unit.unitFactorMap[from] * unit.unitFactorMap[to]);
     return factor;
   }
 }

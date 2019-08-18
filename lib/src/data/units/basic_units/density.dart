@@ -31,3 +31,20 @@ Map<Density, String> densityValuesMap = {
   Density.specificGravity: 'Specific Gravity (S.G.)',
   Density.waterDensity: 'Water Density(H2O)'
 };
+
+Map<Density, num> densityFactorMap = {
+  Density.gramPerCubicCentimeter: 1,
+  Density.gramPerLiter: 1000.0320369,
+  Density.kilogramPerCubicCentimeter: 0.001,
+  Density.kilogramPerCubicMeter: 1000,
+  Density.kilogramPerLiter: 1.0000037,
+  Density.ouncePerCubicFoot: 998.88,
+  Density.ouncePerCubicInch: 0.5780556,
+  Density.poundPerCubicFoot: 62.43,
+  Density.poundPerCubicInch: 0.0361285,
+  Density.pouncPerUSGallon: 8.3456767,
+  Density.slugPerCubicFoot: 1.9403837,
+  Density.slugPerCubicInch: 0.0011229,
+  Density.specificGravity: 1.0000037,
+  Density.waterDensity: 1.0000326,
+};

@@ -76,213 +76,222 @@ void main() {
   group('Conversion general tests', () {
     test('All enums have string values in the conversion map', () {
       bool allConversionsEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Conversions>(
+          areAllEnumsValuesMappedToStringValues<Conversions>(
               Conversions.values, conversionsValuesMap);
       bool allBasicConversionsEnumsAreMapped =
-          areAllEnumsValuesMappedToString<BasicConversions>(
+          areAllEnumsValuesMappedToStringValues<BasicConversions>(
               BasicConversions.values, basicConversionsValuesMap);
       bool allGasConversionsEnumsAreMapped =
-          areAllEnumsValuesMappedToString<GasConversions>(
+          areAllEnumsValuesMappedToStringValues<GasConversions>(
               GasConversions.values, gasConversionsValuesMap);
       bool allFluidConversionsEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FluidConversions>(
+          areAllEnumsValuesMappedToStringValues<FluidConversions>(
               FluidConversions.values, fluidConversionValuesMap);
       bool allForceAndPowerConversionsEnumsAreMapped =
-          areAllEnumsValuesMappedToString<ForceAndPowerConversions>(
+          areAllEnumsValuesMappedToStringValues<ForceAndPowerConversions>(
               ForceAndPowerConversions.values,
               forceAndPowerConversionsValuesMap);
       bool allDrillingConversionsEnumsAreMapped =
-          areAllEnumsValuesMappedToString<DrillingConversions>(
+          areAllEnumsValuesMappedToStringValues<DrillingConversions>(
               DrillingConversions.values, drillingConversionsValuesMap);
       bool allProductionConversionsEnumsAreMapped =
-          areAllEnumsValuesMappedToString<ProductionConversions>(
+          areAllEnumsValuesMappedToStringValues<ProductionConversions>(
               ProductionConversions.values, productionConversionsValuesMap);
       bool allAccelerationEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Acceleration>(
-              Acceleration.values, accelerationValuesMap);
+          areAllEnumsValuesMappedToStringValues<Acceleration>(
+              Acceleration.values, accelerationStringValueMap);
       bool allAngleEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Angle>(Angle.values, angleValuesMap);
-      bool allAreaEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Area>(Area.values, areaValuesMap);
+          areAllEnumsValuesMappedToStringValues<Angle>(
+              Angle.values, angleValuesMap);
+      bool allAreaEnumsAreMapped = areAllEnumsValuesMappedToStringValues<Area>(
+          Area.values, areaValuesMap);
       bool allCostRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<CostRate>(
+          areAllEnumsValuesMappedToStringValues<CostRate>(
               CostRate.values, costRateValuesMap);
       bool allDecimalNumberPrefixEnumsAreMapped =
-          areAllEnumsValuesMappedToString<DecimalNumberPrefix>(
+          areAllEnumsValuesMappedToStringValues<DecimalNumberPrefix>(
               DecimalNumberPrefix.values, decimalNumberPrefixValuesMap);
-      bool allDensityEnumsAreMapped = areAllEnumsValuesMappedToString<Density>(
-          Density.values, densityValuesMap);
+      bool allDensityEnumsAreMapped =
+          areAllEnumsValuesMappedToStringValues<Density>(
+              Density.values, densityValuesMap);
       bool allDistributedForcesEnumsAreMapped =
-          areAllEnumsValuesMappedToString<DistributedForce>(
+          areAllEnumsValuesMappedToStringValues<DistributedForce>(
               DistributedForce.values, distributedForceValuesMap);
-      bool allEnergyEnumsAreMapped = areAllEnumsValuesMappedToString<Energy>(
-          Energy.values, energyValuesMap);
+      bool allEnergyEnumsAreMapped =
+          areAllEnumsValuesMappedToStringValues<Energy>(
+              Energy.values, energyValuesMap);
       bool allFlowrateMassEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FlowrateMass>(
+          areAllEnumsValuesMappedToStringValues<FlowrateMass>(
               FlowrateMass.values, flowrateMassValuesMap);
       bool allFlowrateVolumeEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FlowrateVolume>(
+          areAllEnumsValuesMappedToStringValues<FlowrateVolume>(
               FlowrateVolume.values, flowrateVolumeValuesMap);
       bool allFrequencyEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Frequency>(
+          areAllEnumsValuesMappedToStringValues<Frequency>(
               Frequency.values, frequencyValuesMap);
-      bool allLengthEnumsAreMapped = areAllEnumsValuesMappedToString<Length>(
-          Length.values, lengthValuesMap);
+      bool allLengthEnumsAreMapped =
+          areAllEnumsValuesMappedToStringValues<Length>(
+              Length.values, lengthValuesMap);
       bool allMomentumEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Momentum>(
+          areAllEnumsValuesMappedToStringValues<Momentum>(
               Momentum.values, momentumValuesMap);
       bool allPressureEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Pressure>(
+          areAllEnumsValuesMappedToStringValues<Pressure>(
               Pressure.values, pressureValuesMap);
-      bool allTimeEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Time>(Time.values, timeValuesMap);
-      bool allTorqueEnumsAreMapped = areAllEnumsValuesMappedToString<Torque>(
-          Torque.values, torqueValuesMap);
+      bool allTimeEnumsAreMapped = areAllEnumsValuesMappedToStringValues<Time>(
+          Time.values, timeValuesMap);
+      bool allTorqueEnumsAreMapped =
+          areAllEnumsValuesMappedToStringValues<Torque>(
+              Torque.values, torqueValuesMap);
       bool allVolumeBasicEnumsAreMapped =
-          areAllEnumsValuesMappedToString<VolumeBasic>(
+          areAllEnumsValuesMappedToStringValues<VolumeBasic>(
               VolumeBasic.values, volumeBasicValuesMap);
-      bool allWeightEnumsAreMapped = areAllEnumsValuesMappedToString<Weight>(
-          Weight.values, weightValuesMap);
+      bool allWeightEnumsAreMapped =
+          areAllEnumsValuesMappedToStringValues<Weight>(
+              Weight.values, weightValuesMap);
       bool allWeightPerUnitLengthEnumsAreMapped =
-          areAllEnumsValuesMappedToString<WeightPerUnitLength>(
+          areAllEnumsValuesMappedToStringValues<WeightPerUnitLength>(
               WeightPerUnitLength.values, weightPerUnitLengthValuesMap);
       bool allGasInjectionRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<GasInjectionRate>(
+          areAllEnumsValuesMappedToStringValues<GasInjectionRate>(
               GasInjectionRate.values, gasInjectionRateValuesMap);
       bool allGasProductionIndexEnumsAreMapped =
-          areAllEnumsValuesMappedToString<GasProductionIndex>(
+          areAllEnumsValuesMappedToStringValues<GasProductionIndex>(
               GasProductionIndex.values, gasProductionIndexValuesMap);
       bool allGasVolumeEnumsAreMapped =
-          areAllEnumsValuesMappedToString<GasVolume>(
+          areAllEnumsValuesMappedToStringValues<GasVolume>(
               GasVolume.values, gasVolumeValuesMap);
       bool allGasProductionRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<GasProductionRate>(
+          areAllEnumsValuesMappedToStringValues<GasProductionRate>(
               GasProductionRate.values, gasProductionRateValuesMap);
       bool allLiquefiedNaturalGasEnumsAreMapped =
-          areAllEnumsValuesMappedToString<LiquefiedNaturalGas>(
+          areAllEnumsValuesMappedToStringValues<LiquefiedNaturalGas>(
               LiquefiedNaturalGas.values, liquefiedNaturalGasValuesMap);
       bool allSpecificVolumeEnumsAreMapped =
-          areAllEnumsValuesMappedToString<SpecificVolume>(
+          areAllEnumsValuesMappedToStringValues<SpecificVolume>(
               SpecificVolume.values, specificVolumeValuesMap);
       bool allVolumeGasEnumsAreMapped =
-          areAllEnumsValuesMappedToString<VolumeGas>(
+          areAllEnumsValuesMappedToStringValues<VolumeGas>(
               VolumeGas.values, volumeGasValuesMap);
       bool allCrudeOilEnumsAreMapped =
-          areAllEnumsValuesMappedToString<CrudeOil>(
+          areAllEnumsValuesMappedToStringValues<CrudeOil>(
               CrudeOil.values, crudeOilValuesMap);
       bool allFluidConsistencyEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FluidConsistency>(
+          areAllEnumsValuesMappedToStringValues<FluidConsistency>(
               FluidConsistency.values, fluidConsistencyValuesMap);
       bool allFluidVelocityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FluidVelocity>(
+          areAllEnumsValuesMappedToStringValues<FluidVelocity>(
               FluidVelocity.values, fluidVelocityValuesMap);
       bool allFluidYieldPointEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FluidYieldPoint>(
+          areAllEnumsValuesMappedToStringValues<FluidYieldPoint>(
               FluidYieldPoint.values, fluidYieldPointValuesMap);
       bool allLiquidProductionRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<LiquidProductionRate>(
+          areAllEnumsValuesMappedToStringValues<LiquidProductionRate>(
               LiquidProductionRate.values, liquidProductionRateValuesMap);
       bool allViscosityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Viscosity>(
+          areAllEnumsValuesMappedToStringValues<Viscosity>(
               Viscosity.values, viscosityValuesMap);
       bool allElectricCurrentEnumsAreMapped =
-          areAllEnumsValuesMappedToString<ElectricCurrent>(
+          areAllEnumsValuesMappedToStringValues<ElectricCurrent>(
               ElectricCurrent.values, electricCurrentValuesMap);
       bool allForceEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Force>(Force.values, forceValuesMap);
+          areAllEnumsValuesMappedToStringValues<Force>(
+              Force.values, forceValuesMap);
       bool allFractureConductivityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FractureConductivity>(
+          areAllEnumsValuesMappedToStringValues<FractureConductivity>(
               FractureConductivity.values, fractureConductivityValuesMap);
       bool allFuelVolumeEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FuelVolume>(
+          areAllEnumsValuesMappedToStringValues<FuelVolume>(
               FuelVolume.values, fuelVolumeValuesMap);
       bool allHeatCapacityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<HeatCapacity>(
+          areAllEnumsValuesMappedToStringValues<HeatCapacity>(
               HeatCapacity.values, heatCapacityValuesMap);
       bool allHeatConductivityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<HeatConductivity>(
+          areAllEnumsValuesMappedToStringValues<HeatConductivity>(
               HeatConductivity.values, heatConductivityValuesMap);
       bool allPowerEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Power>(Power.values, powerValuesMap);
+          areAllEnumsValuesMappedToStringValues<Power>(
+              Power.values, powerValuesMap);
       bool allPowerArewEnumsAreMapped =
-          areAllEnumsValuesMappedToString<PowerArew>(
+          areAllEnumsValuesMappedToStringValues<PowerArew>(
               PowerArew.values, powerArewValuesMap);
       bool allVelocityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Velocity>(
+          areAllEnumsValuesMappedToStringValues<Velocity>(
               Velocity.values, velocityValuesMap);
       bool allVelocityAngularEnumsAreMapped =
-          areAllEnumsValuesMappedToString<VelocityAngular>(
+          areAllEnumsValuesMappedToStringValues<VelocityAngular>(
               VelocityAngular.values, velocityAngularValuesMap);
       bool allAxialDamplingCoefficientEnumsAreMapped =
-          areAllEnumsValuesMappedToString<AxialDamplingCoefficient>(
+          areAllEnumsValuesMappedToStringValues<AxialDamplingCoefficient>(
               AxialDamplingCoefficient.values,
               axialDamplingCoefficientValuesMap);
       bool allAxialSpringConstantEnumsAreMapped =
-          areAllEnumsValuesMappedToString<AxialSpringConstant>(
+          areAllEnumsValuesMappedToStringValues<AxialSpringConstant>(
               AxialSpringConstant.values, axialSpringConstantValuesMap);
-      bool allDoglegEnumsAreMapped = areAllEnumsValuesMappedToString<Dogleg>(
-          Dogleg.values, doglegValuesMap);
+      bool allDoglegEnumsAreMapped =
+          areAllEnumsValuesMappedToStringValues<Dogleg>(
+              Dogleg.values, doglegValuesMap);
       bool allDrillingRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<DrillingRate>(
+          areAllEnumsValuesMappedToStringValues<DrillingRate>(
               DrillingRate.values, drillingRateValuesMap);
       bool allFootageCostEnumsAreMapped =
-          areAllEnumsValuesMappedToString<FootageCost>(
+          areAllEnumsValuesMappedToStringValues<FootageCost>(
               FootageCost.values, footageCostValuesMap);
       bool allMudWeightEnumsAreMapped =
-          areAllEnumsValuesMappedToString<MudWeight>(
+          areAllEnumsValuesMappedToStringValues<MudWeight>(
               MudWeight.values, mudWeightValuesMap);
       bool allPressureGradientEnumsAreMapped =
-          areAllEnumsValuesMappedToString<PressureGradient>(
+          areAllEnumsValuesMappedToStringValues<PressureGradient>(
               PressureGradient.values, pressureGradientValuesMap);
       bool allPumpingAndFlowRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<PumpingAndFlowRate>(
+          areAllEnumsValuesMappedToStringValues<PumpingAndFlowRate>(
               PumpingAndFlowRate.values, pumpingAndFlowRateValuesMap);
       bool allTorsionalDampingCoefficientEnumsAreMapped =
-          areAllEnumsValuesMappedToString<TorsionalDamplingCoefficient>(
+          areAllEnumsValuesMappedToStringValues<TorsionalDamplingCoefficient>(
               TorsionalDamplingCoefficient.values,
               torsionalDamplingCoefficientValuesMap);
       bool allTorsionalSpringConstantEnumsAreMapped =
-          areAllEnumsValuesMappedToString<TorsionalSpringConstant>(
+          areAllEnumsValuesMappedToStringValues<TorsionalSpringConstant>(
               TorsionalSpringConstant.values, torsionalSpringConstantValuesMap);
       bool allYieldSlurryEnumsAreMapped =
-          areAllEnumsValuesMappedToString<YieldSlurry>(
+          areAllEnumsValuesMappedToStringValues<YieldSlurry>(
               YieldSlurry.values, yieldSlurryValuesMap);
       bool allNozzleSizeEnumsAreMapped =
-          areAllEnumsValuesMappedToString<NozzleSize>(
+          areAllEnumsValuesMappedToStringValues<NozzleSize>(
               NozzleSize.values, nozzleSizeValuesMap);
       bool allNozzleSpeedEnumsAreMapped =
-          areAllEnumsValuesMappedToString<NozzleSpeed>(
+          areAllEnumsValuesMappedToStringValues<NozzleSpeed>(
               NozzleSpeed.values, nozzleSpeedValuesMap);
       bool allOilProductionIndexEnumsAreMapped =
-          areAllEnumsValuesMappedToString<OilProductionIndex>(
+          areAllEnumsValuesMappedToStringValues<OilProductionIndex>(
               OilProductionIndex.values, oilProductionIndexValuesMap);
       bool allPermeabilityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Permeability>(
+          areAllEnumsValuesMappedToStringValues<Permeability>(
               Permeability.values, permeabilityValuesMap);
       bool allPipeCapacityEnumsAreMapped =
-          areAllEnumsValuesMappedToString<PipeCapacity>(
+          areAllEnumsValuesMappedToStringValues<PipeCapacity>(
               PipeCapacity.values, pipeCapacityValuesMap);
       bool allProductionRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<ProductionRate>(
+          areAllEnumsValuesMappedToStringValues<ProductionRate>(
               ProductionRate.values, productionRateValuesMap);
       bool allRotationEnumsAreMapped =
-          areAllEnumsValuesMappedToString<Rotation>(
+          areAllEnumsValuesMappedToStringValues<Rotation>(
               Rotation.values, rotationValuesMap);
       bool allSectionModulusEnumsAreMapped =
-          areAllEnumsValuesMappedToString<SectionModulus>(
+          areAllEnumsValuesMappedToStringValues<SectionModulus>(
               SectionModulus.values, sectionModulusValuesMap);
       bool allSectionModulusMomentOfSectionEnumsAreMapped =
-          areAllEnumsValuesMappedToString<SectionModulusMomentOfSection>(
+          areAllEnumsValuesMappedToStringValues<SectionModulusMomentOfSection>(
               SectionModulusMomentOfSection.values,
               sectionModulusMomentOfSectionValuesMap);
       bool allStressElasticModulusEnumsAreMapped =
-          areAllEnumsValuesMappedToString<StressElasticModulus>(
+          areAllEnumsValuesMappedToStringValues<StressElasticModulus>(
               StressElasticModulus.values, stressElasticModulusValuesMap);
       bool allStrokeRateEnumsAreMapped =
-          areAllEnumsValuesMappedToString<StrokeRate>(
+          areAllEnumsValuesMappedToStringValues<StrokeRate>(
               StrokeRate.values, strokeRateValuesMap);
       bool allStrokeVolumeEnumsAreMapped =
-          areAllEnumsValuesMappedToString<StrokeVolume>(
+          areAllEnumsValuesMappedToStringValues<StrokeVolume>(
               StrokeVolume.values, strokeVolumeValuesMap);
 
       expect(allNozzleSizeEnumsAreMapped, true);
@@ -358,20 +367,291 @@ void main() {
       expect(allDecimalNumberPrefixEnumsAreMapped, true);
       expect(allDensityEnumsAreMapped, true);
     });
+
+    test('All enums have factors in the conversion map', () {
+      bool allAccelerationEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Acceleration>(
+              Acceleration.values, accelerationFactorMap);
+      bool allAngleEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Angle>(Angle.values, angleFactorMap);
+      bool allAreaEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Area>(Area.values, areaFactorMap);
+      bool allCostRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<CostRate>(
+              CostRate.values, costRateFactorMap);
+      bool allDecimalNumberPrefixEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<DecimalNumberPrefix>(
+              DecimalNumberPrefix.values, decimalNumberPrefixFactorMap);
+      bool allDensityEnumsAreMapped = areAllEnumsValuesMappedToFactors<Density>(
+          Density.values, densityFactorMap);
+      bool allDistributedForcesEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<DistributedForce>(
+              DistributedForce.values, distributedForceFactorMap);
+      bool allEnergyEnumsAreMapped = areAllEnumsValuesMappedToFactors<Energy>(
+          Energy.values, energyFactorMap);
+      bool allFlowrateMassEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FlowrateMass>(
+              FlowrateMass.values, flowrateMassFactorMap);
+      bool allFlowrateVolumeEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FlowrateVolume>(
+              FlowrateVolume.values, flowrateVolumeFactorMap);
+      bool allFrequencyEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Frequency>(
+              Frequency.values, frequencyFactorMap);
+      bool allLengthEnumsAreMapped = areAllEnumsValuesMappedToFactors<Length>(
+          Length.values, lengthFactorMap);
+      bool allMomentumEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Momentum>(
+              Momentum.values, momentumFactorMap);
+      bool allPressureEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Pressure>(
+              Pressure.values, pressureFactorMap);
+      bool allTimeEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Time>(Time.values, timeFactorMap);
+      bool allTorqueEnumsAreMapped = areAllEnumsValuesMappedToFactors<Torque>(
+          Torque.values, torqueFactorMap);
+      bool allVolumeBasicEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<VolumeBasic>(
+              VolumeBasic.values, volumeBasicFactorMap);
+      bool allWeightEnumsAreMapped = areAllEnumsValuesMappedToFactors<Weight>(
+          Weight.values, weightFactorMap);
+      bool allWeightPerUnitLengthEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<WeightPerUnitLength>(
+              WeightPerUnitLength.values, weightPerUnitLengthFactorMap);
+      // bool allGasInjectionRateEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<GasInjectionRate>(
+      //         GasInjectionRate.values, gasInjectionRateFactorMap);
+      // bool allGasProductionIndexEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<GasProductionIndex>(
+      //         GasProductionIndex.values, gasProductionIndexFactorMap);
+      // bool allGasVolumeEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<GasVolume>(
+      //         GasVolume.values, gasVolumeFactorMap);
+      // bool allGasProductionRateEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<GasProductionRate>(
+      //         GasProductionRate.values, gasProductionRateFactorMap);
+      // bool allLiquefiedNaturalGasEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<LiquefiedNaturalGas>(
+      //         LiquefiedNaturalGas.values, liquefiedNaturalGasFactorMap);
+      // bool allSpecificVolumeEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<SpecificVolume>(
+      //         SpecificVolume.values, specificVolumeFactorMap);
+      // bool allVolumeGasEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<VolumeGas>(
+      //         VolumeGas.values, volumeGasFactorMap);
+      // bool allCrudeOilEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<CrudeOil>(
+      //         CrudeOil.values, crudeOilFactorMap);
+      // bool allFluidConsistencyEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<FluidConsistency>(
+      //         FluidConsistency.values, fluidConsistencyFactorMap);
+      // bool allFluidVelocityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<FluidVelocity>(
+      //         FluidVelocity.values, fluidVelocityFactorMap);
+      // bool allFluidYieldPointEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<FluidYieldPoint>(
+      //         FluidYieldPoint.values, fluidYieldPointFactorMap);
+      // bool allLiquidProductionRateEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<LiquidProductionRate>(
+      //         LiquidProductionRate.values, liquidProductionRateFactorMap);
+      // bool allViscosityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<Viscosity>(
+      //         Viscosity.values, viscosityFactorMap);
+      // bool allElectricCurrentEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<ElectricCurrent>(
+      //         ElectricCurrent.values, electricCurrentFactorMap);
+      // bool allForceEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<Force>(Force.values, forceFactorMap);
+      // bool allFractureConductivityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<FractureConductivity>(
+      //         FractureConductivity.values, fractureConductivityFactorMap);
+      // bool allFuelVolumeEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<FuelVolume>(
+      //         FuelVolume.values, fuelVolumeFactorMap);
+      // bool allHeatCapacityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<HeatCapacity>(
+      //         HeatCapacity.values, heatCapacityFactorMap);
+      // bool allHeatConductivityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<HeatConductivity>(
+      //         HeatConductivity.values, heatConductivityFactorMap);
+      // bool allPowerEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<Power>(Power.values, powerFactorMap);
+      // bool allPowerArewEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<PowerArew>(
+      //         PowerArew.values, powerArewFactorMap);
+      // bool allVelocityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<Velocity>(
+      //         Velocity.values, velocityFactorMap);
+      // bool allVelocityAngularEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<VelocityAngular>(
+      //         VelocityAngular.values, velocityAngularFactorMap);
+      // bool allAxialDamplingCoefficientEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<AxialDamplingCoefficient>(
+      //         AxialDamplingCoefficient.values,
+      //         axialDamplingCoefficientFactorMap);
+      // bool allAxialSpringConstantEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<AxialSpringConstant>(
+      //         AxialSpringConstant.values, axialSpringConstantFactorMap);
+      // bool allDoglegEnumsAreMapped = areAllEnumsValuesMappedToFactors<Dogleg>(
+      //     Dogleg.values, doglegFactorMap);
+      // bool allDrillingRateEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<DrillingRate>(
+      //         DrillingRate.values, drillingRateFactorMap);
+      // bool allFootageCostEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<FootageCost>(
+      //         FootageCost.values, footageCostFactorMap);
+      // bool allMudWeightEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<MudWeight>(
+      //         MudWeight.values, mudWeightFactorMap);
+      // bool allPressureGradientEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<PressureGradient>(
+      //         PressureGradient.values, pressureGradientFactorMap);
+      // bool allPumpingAndFlowRateEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<PumpingAndFlowRate>(
+      //         PumpingAndFlowRate.values, pumpingAndFlowRateFactorMap);
+      // bool allTorsionalDampingCoefficientEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<TorsionalDamplingCoefficient>(
+      //         TorsionalDamplingCoefficient.values,
+      //         torsionalDamplingCoefficientFactorMap);
+      // bool allTorsionalSpringConstantEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<TorsionalSpringConstant>(
+      //         TorsionalSpringConstant.values, torsionalSpringConstantFactorMap);
+      // bool allYieldSlurryEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<YieldSlurry>(
+      //         YieldSlurry.values, yieldSlurryFactorMap);
+      // bool allNozzleSizeEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<NozzleSize>(
+      //         NozzleSize.values, nozzleSizeFactorMap);
+      // bool allNozzleSpeedEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<NozzleSpeed>(
+      //         NozzleSpeed.values, nozzleSpeedFactorMap);
+      // bool allOilProductionIndexEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<OilProductionIndex>(
+      //         OilProductionIndex.values, oilProductionIndexFactorMap);
+      // bool allPermeabilityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<Permeability>(
+      //         Permeability.values, permeabilityFactorMap);
+      // bool allPipeCapacityEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<PipeCapacity>(
+      //         PipeCapacity.values, pipeCapacityFactorMap);
+      // bool allProductionRateEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<ProductionRate>(
+      //         ProductionRate.values, productionRateFactorMap);
+      // bool allRotationEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<Rotation>(
+      //         Rotation.values, rotationFactorMap);
+      // bool allSectionModulusEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<SectionModulus>(
+      //         SectionModulus.values, sectionModulusFactorMap);
+      // bool allSectionModulusMomentOfSectionEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<SectionModulusMomentOfSection>(
+      //         SectionModulusMomentOfSection.values,
+      //         sectionModulusMomentOfSectionFactorMap);
+      // bool allStressElasticModulusEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<StressElasticModulus>(
+      //         StressElasticModulus.values, stressElasticModulusFactorMap);
+      // bool allStrokeRateEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<StrokeRate>(
+      //         StrokeRate.values, strokeRateFactorMap);
+      // bool allStrokeVolumeEnumsAreMapped =
+      //     areAllEnumsValuesMappedToFactors<StrokeVolume>(
+      //         StrokeVolume.values, strokeVolumeFactorMap);
+
+      // expect(allNozzleSizeEnumsAreMapped, true);
+      // expect(allNozzleSpeedEnumsAreMapped, true);
+      // expect(allOilProductionIndexEnumsAreMapped, true);
+      // expect(allPermeabilityEnumsAreMapped, true);
+      // expect(allPipeCapacityEnumsAreMapped, true);
+      // expect(allProductionRateEnumsAreMapped, true);
+      // expect(allRotationEnumsAreMapped, true);
+      // expect(allSectionModulusEnumsAreMapped, true);
+      // expect(allSectionModulusMomentOfSectionEnumsAreMapped, true);
+      // expect(allStressElasticModulusEnumsAreMapped, true);
+      // expect(allStrokeRateEnumsAreMapped, true);
+      // expect(allStrokeVolumeEnumsAreMapped, true);
+      // expect(allAxialDamplingCoefficientEnumsAreMapped, true);
+      // expect(allAxialSpringConstantEnumsAreMapped, true);
+      // expect(allDoglegEnumsAreMapped, true);
+      // expect(allDrillingRateEnumsAreMapped, true);
+      // expect(allFootageCostEnumsAreMapped, true);
+      // expect(allMudWeightEnumsAreMapped, true);
+      // expect(allPressureGradientEnumsAreMapped, true);
+      // expect(allPumpingAndFlowRateEnumsAreMapped, true);
+      // expect(allTorsionalDampingCoefficientEnumsAreMapped, true);
+      // expect(allTorsionalSpringConstantEnumsAreMapped, true);
+      // expect(allYieldSlurryEnumsAreMapped, true);
+      // expect(allVelocityAngularEnumsAreMapped, true);
+      // expect(allVelocityEnumsAreMapped, true);
+      // expect(allPowerArewEnumsAreMapped, true);
+      // expect(allPowerEnumsAreMapped, true);
+      // expect(allHeatConductivityEnumsAreMapped, true);
+      // expect(allHeatCapacityEnumsAreMapped, true);
+      // expect(allFuelVolumeEnumsAreMapped, true);
+      // expect(allFractureConductivityEnumsAreMapped, true);
+      // expect(allForceEnumsAreMapped, true);
+      // expect(allElectricCurrentEnumsAreMapped, true);
+      // expect(allViscosityEnumsAreMapped, true);
+      // expect(allLiquidProductionRateEnumsAreMapped, true);
+      // expect(allFluidYieldPointEnumsAreMapped, true);
+      // expect(allFluidVelocityEnumsAreMapped, true);
+      // expect(allFluidConsistencyEnumsAreMapped, true);
+      // expect(allCrudeOilEnumsAreMapped, true);
+      // expect(allVolumeGasEnumsAreMapped, true);
+      // expect(allSpecificVolumeEnumsAreMapped, true);
+      // expect(allLiquefiedNaturalGasEnumsAreMapped, true);
+      // expect(allGasVolumeEnumsAreMapped, true);
+      // expect(allGasProductionRateEnumsAreMapped, true);
+      // expect(allGasProductionIndexEnumsAreMapped, true);
+      // expect(allGasInjectionRateEnumsAreMapped, true);
+      expect(allWeightPerUnitLengthEnumsAreMapped, true);
+      expect(allWeightEnumsAreMapped, true);
+      expect(allVolumeBasicEnumsAreMapped, true);
+      expect(allTorqueEnumsAreMapped, true);
+      expect(allTimeEnumsAreMapped, true);
+      expect(allPressureEnumsAreMapped, true);
+      expect(allMomentumEnumsAreMapped, true);
+      expect(allLengthEnumsAreMapped, true);
+      expect(allFrequencyEnumsAreMapped, true);
+      expect(allFlowrateVolumeEnumsAreMapped, true);
+      expect(allFlowrateMassEnumsAreMapped, true);
+      expect(allEnergyEnumsAreMapped, true);
+      expect(allDistributedForcesEnumsAreMapped, true);
+      expect(allAccelerationEnumsAreMapped, true);
+      expect(allAngleEnumsAreMapped, true);
+      expect(allAreaEnumsAreMapped, true);
+      expect(allCostRateEnumsAreMapped, true);
+      expect(allDecimalNumberPrefixEnumsAreMapped, true);
+      expect(allDensityEnumsAreMapped, true);
+    });
   });
 }
 
-bool areAllEnumsValuesMappedToString<T>(
-    List<T> enumValues, Map<T, String> enumValuesMap) {
-  bool allEnumsAreMapped = enumValues.every((enumKey) {
-    String enumValue = enumValuesMap[enumKey];
+bool areAllEnumsValuesMappedToStringValues<T>(
+    List<T> enums, Map<T, String> enumStringValuesMap) {
+  bool allEnumsAreMapped = enums.every((enumKey) {
+    String enumStringValue = enumStringValuesMap[enumKey];
 
-    bool enumValueIsMapped =
-        enumValuesMap.containsKey(enumKey) && enumValue.isNotEmpty;
-    if (enumValueIsMapped == false)
-      print('$enumKey in $enumValuesMap fails test');
+    bool enumStringValueIsMapped =
+        enumStringValuesMap.containsKey(enumKey) && enumStringValue.isNotEmpty;
+    if (enumStringValueIsMapped == false)
+      print('$enumKey in $enumStringValuesMap fails test');
 
-    return enumValueIsMapped;
+    return enumStringValueIsMapped;
+  });
+  return allEnumsAreMapped;
+}
+
+bool areAllEnumsValuesMappedToFactors<T>(
+    List<T> enums, Map<T, num> enumFactorsMap) {
+  bool allEnumsAreMapped = enums.every((enumKey) {
+    num enumFactor = enumFactorsMap[enumKey];
+
+    bool enumFactorIsMapped =
+        enumFactorsMap.containsKey(enumKey) && (enumFactor != null);
+    if (enumFactorIsMapped == false)
+      print('$enumKey in $enumFactorsMap fails test');
+
+    return enumFactorIsMapped;
   });
   return allEnumsAreMapped;
 }

@@ -8,3 +8,12 @@ Map<Time, String> timeValuesMap = {
   Time.second: 'Second(sec)',
   Time.year: 'Year(yr)',
 };
+
+Map<Time, num> timeFactorMap = {
+  Time.day : 1, 
+  Time.decade : 0.000274, 
+  Time.hour : 24, 
+  Time.minute : 1440, 
+  Time.second : 86400, 
+  Time.year : 0.0027397, 
+  };
