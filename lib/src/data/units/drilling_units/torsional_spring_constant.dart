@@ -6,3 +6,8 @@ Map<TorsionalSpringConstant, String> torsionalSpringConstantValuesMap = {
   TorsionalSpringConstant.poundInchPerRadian:
       'Pound Inch per Radian(lb-in/rad)',
 };
+
+Map<TorsionalSpringConstant, num> torsionalSpringConstantFactorMap = {
+  TorsionalSpringConstant.newtonMeterPerRadian :1 , 
+  TorsionalSpringConstant.poundInchPerRadian : 1.0159504, 
+  };

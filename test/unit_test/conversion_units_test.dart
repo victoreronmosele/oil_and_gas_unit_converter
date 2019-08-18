@@ -485,40 +485,40 @@ void main() {
       bool allVelocityAngularEnumsAreMapped =
           areAllEnumsValuesMappedToFactors<VelocityAngular>(
               VelocityAngular.values, velocityAngularFactorMap);
-      // bool allAxialDamplingCoefficientEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<AxialDamplingCoefficient>(
-      //         AxialDamplingCoefficient.values,
-      //         axialDamplingCoefficientFactorMap);
-      // bool allAxialSpringConstantEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<AxialSpringConstant>(
-      //         AxialSpringConstant.values, axialSpringConstantFactorMap);
-      // bool allDoglegEnumsAreMapped = areAllEnumsValuesMappedToFactors<Dogleg>(
-      //     Dogleg.values, doglegFactorMap);
-      // bool allDrillingRateEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<DrillingRate>(
-      //         DrillingRate.values, drillingRateFactorMap);
-      // bool allFootageCostEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<FootageCost>(
-      //         FootageCost.values, footageCostFactorMap);
-      // bool allMudWeightEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<MudWeight>(
-      //         MudWeight.values, mudWeightFactorMap);
-      // bool allPressureGradientEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<PressureGradient>(
-      //         PressureGradient.values, pressureGradientFactorMap);
-      // bool allPumpingAndFlowRateEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<PumpingAndFlowRate>(
-      //         PumpingAndFlowRate.values, pumpingAndFlowRateFactorMap);
-      // bool allTorsionalDampingCoefficientEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<TorsionalDamplingCoefficient>(
-      //         TorsionalDamplingCoefficient.values,
-      //         torsionalDamplingCoefficientFactorMap);
-      // bool allTorsionalSpringConstantEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<TorsionalSpringConstant>(
-      //         TorsionalSpringConstant.values, torsionalSpringConstantFactorMap);
-      // bool allYieldSlurryEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<YieldSlurry>(
-      //         YieldSlurry.values, yieldSlurryFactorMap);
+      bool allAxialDamplingCoefficientEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<AxialDamplingCoefficient>(
+              AxialDamplingCoefficient.values,
+              axialDamplingCoefficientFactorMap);
+      bool allAxialSpringConstantEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<AxialSpringConstant>(
+              AxialSpringConstant.values, axialSpringConstantFactorMap);
+      bool allDoglegEnumsAreMapped = areAllEnumsValuesMappedToFactors<Dogleg>(
+          Dogleg.values, doglegFactorMap);
+      bool allDrillingRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<DrillingRate>(
+              DrillingRate.values, drillingRateFactorMap);
+      bool allFootageCostEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FootageCost>(
+              FootageCost.values, footageCostFactorMap);
+      bool allMudWeightEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<MudWeight>(
+              MudWeight.values, mudWeightFactorMap);
+      bool allPressureGradientEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<PressureGradient>(
+              PressureGradient.values, pressureGradientFactorMap);
+      bool allPumpingAndFlowRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<PumpingAndFlowRate>(
+              PumpingAndFlowRate.values, pumpingAndFlowRateFactorMap);
+      bool allTorsionalDampingCoefficientEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<TorsionalDamplingCoefficient>(
+              TorsionalDamplingCoefficient.values,
+              torsionalDamplingCoefficientFactorMap);
+      bool allTorsionalSpringConstantEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<TorsionalSpringConstant>(
+              TorsionalSpringConstant.values, torsionalSpringConstantFactorMap);
+      bool allYieldSlurryEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<YieldSlurry>(
+              YieldSlurry.values, yieldSlurryFactorMap);
       // bool allNozzleSizeEnumsAreMapped =
       //     areAllEnumsValuesMappedToFactors<NozzleSize>(
       //         NozzleSize.values, nozzleSizeFactorMap);
@@ -570,16 +570,16 @@ void main() {
       // expect(allStrokeRateEnumsAreMapped, true);
       // expect(allStrokeVolumeEnumsAreMapped, true);
       // expect(allAxialDamplingCoefficientEnumsAreMapped, true);
-      // expect(allAxialSpringConstantEnumsAreMapped, true);
-      // expect(allDoglegEnumsAreMapped, true);
-      // expect(allDrillingRateEnumsAreMapped, true);
-      // expect(allFootageCostEnumsAreMapped, true);
-      // expect(allMudWeightEnumsAreMapped, true);
-      // expect(allPressureGradientEnumsAreMapped, true);
-      // expect(allPumpingAndFlowRateEnumsAreMapped, true);
-      // expect(allTorsionalDampingCoefficientEnumsAreMapped, true);
-      // expect(allTorsionalSpringConstantEnumsAreMapped, true);
-      // expect(allYieldSlurryEnumsAreMapped, true);
+      expect(allAxialSpringConstantEnumsAreMapped, true);
+      expect(allDoglegEnumsAreMapped, true);
+      expect(allDrillingRateEnumsAreMapped, true);
+      expect(allFootageCostEnumsAreMapped, true);
+      expect(allMudWeightEnumsAreMapped, true);
+      expect(allPressureGradientEnumsAreMapped, true);
+      expect(allPumpingAndFlowRateEnumsAreMapped, true);
+      expect(allTorsionalDampingCoefficientEnumsAreMapped, true);
+      expect(allTorsionalSpringConstantEnumsAreMapped, true);
+      expect(allYieldSlurryEnumsAreMapped, true);
       expect(allVelocityAngularEnumsAreMapped, true);
       expect(allVelocityEnumsAreMapped, true);
       expect(allPowerArewEnumsAreMapped, true);
