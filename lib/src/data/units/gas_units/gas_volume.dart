@@ -20,3 +20,14 @@ Map<GasVolume, String> gasVolumeValuesMap = {
   GasVolume.thousandStandardCubicFeet: 'Thousand Standard Cubic Feet(Mscf)',
   GasVolume.tonLiquefiedNaturalGas: 'Ton Liquefied Natural Gas(ton LNG)',
 };
+
+Map<GasVolume, num> gasVolumeFactorMap = {
+  GasVolume.barrelOfOilEquivalent: 1,
+  GasVolume.cubicMeter: 169.902,
+  GasVolume.millionStandardCubicFeet: 0.006,
+  GasVolume.millionStandardCubicMeters: 0.0001699,
+  GasVolume.thousandBarrelsOfOilEquivalent: 0.001,
+  GasVolume.thousandCubicMeter: 0.169902,
+  GasVolume.thousandStandardCubicFeet: 6,
+  GasVolume.tonLiquefiedNaturalGas: 0.1232067,
+};

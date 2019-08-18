@@ -25,3 +25,17 @@ Map<VolumeGas, String> volumeGasValuesMap = {
   VolumeGas.liter: 'Liter(L)',
   VolumeGas.quartLiquid: 'Quart - Liquid(qt)',
 };
+
+Map<VolumeGas, num> volumeGasFactorMap = {
+  VolumeGas.barrelPetroleum: 1,
+  VolumeGas.cubicCentimeter: 158987.2949285,
+  VolumeGas.cubicDecimeter: 1589.8729493,
+  VolumeGas.cubicFoot: 5.6145833,
+  VolumeGas.cubicInch: 9702,
+  VolumeGas.cubicMeter: 0.1589873,
+  VolumeGas.cubicYard: 0.2079475,
+  VolumeGas.fluidOunce: 5376,
+  VolumeGas.gallon: 42,
+  VolumeGas.liter: 158.9872949,
+  VolumeGas.quartLiquid: 168,
+};

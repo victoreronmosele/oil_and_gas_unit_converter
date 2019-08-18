@@ -418,27 +418,27 @@ void main() {
       bool allWeightPerUnitLengthEnumsAreMapped =
           areAllEnumsValuesMappedToFactors<WeightPerUnitLength>(
               WeightPerUnitLength.values, weightPerUnitLengthFactorMap);
-      // bool allGasInjectionRateEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<GasInjectionRate>(
-      //         GasInjectionRate.values, gasInjectionRateFactorMap);
-      // bool allGasProductionIndexEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<GasProductionIndex>(
-      //         GasProductionIndex.values, gasProductionIndexFactorMap);
-      // bool allGasVolumeEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<GasVolume>(
-      //         GasVolume.values, gasVolumeFactorMap);
-      // bool allGasProductionRateEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<GasProductionRate>(
-      //         GasProductionRate.values, gasProductionRateFactorMap);
-      // bool allLiquefiedNaturalGasEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<LiquefiedNaturalGas>(
-      //         LiquefiedNaturalGas.values, liquefiedNaturalGasFactorMap);
-      // bool allSpecificVolumeEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<SpecificVolume>(
-      //         SpecificVolume.values, specificVolumeFactorMap);
-      // bool allVolumeGasEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<VolumeGas>(
-      //         VolumeGas.values, volumeGasFactorMap);
+      bool allGasInjectionRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<GasInjectionRate>(
+              GasInjectionRate.values, gasInjectionRateFactorMap);
+      bool allGasProductionIndexEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<GasProductionIndex>(
+              GasProductionIndex.values, gasProductionIndexFactorMap);
+      bool allGasVolumeEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<GasVolume>(
+              GasVolume.values, gasVolumeFactorMap);
+      bool allGasProductionRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<GasProductionRate>(
+              GasProductionRate.values, gasProductionRateFactorMap);
+      bool allLiquefiedNaturalGasEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<LiquefiedNaturalGas>(
+              LiquefiedNaturalGas.values, liquefiedNaturalGasFactorMap);
+      bool allSpecificVolumeEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<SpecificVolume>(
+              SpecificVolume.values, specificVolumeFactorMap);
+      bool allVolumeGasEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<VolumeGas>(
+              VolumeGas.values, volumeGasFactorMap);
       // bool allCrudeOilEnumsAreMapped =
       //     areAllEnumsValuesMappedToFactors<CrudeOil>(
       //         CrudeOil.values, crudeOilFactorMap);
@@ -596,13 +596,13 @@ void main() {
       // expect(allFluidVelocityEnumsAreMapped, true);
       // expect(allFluidConsistencyEnumsAreMapped, true);
       // expect(allCrudeOilEnumsAreMapped, true);
-      // expect(allVolumeGasEnumsAreMapped, true);
-      // expect(allSpecificVolumeEnumsAreMapped, true);
-      // expect(allLiquefiedNaturalGasEnumsAreMapped, true);
-      // expect(allGasVolumeEnumsAreMapped, true);
-      // expect(allGasProductionRateEnumsAreMapped, true);
-      // expect(allGasProductionIndexEnumsAreMapped, true);
-      // expect(allGasInjectionRateEnumsAreMapped, true);
+      expect(allVolumeGasEnumsAreMapped, true);
+      expect(allSpecificVolumeEnumsAreMapped, true);
+      expect(allLiquefiedNaturalGasEnumsAreMapped, true);
+      expect(allGasVolumeEnumsAreMapped, true);
+      expect(allGasProductionRateEnumsAreMapped, true);
+      expect(allGasProductionIndexEnumsAreMapped, true);
+      expect(allGasInjectionRateEnumsAreMapped, true);
       expect(allWeightPerUnitLengthEnumsAreMapped, true);
       expect(allWeightEnumsAreMapped, true);
       expect(allVolumeBasicEnumsAreMapped, true);
