@@ -21,3 +21,15 @@ Map<VelocityAngular, String> velocityAngularValuesMap = {
   VelocityAngular.revolutionsPerMinute: 'Revolutions per Minute(RPM)',
   VelocityAngular.revolutionsPerSecond: 'Revolutions per Second(RPS)',
 };
+
+Map<VelocityAngular, num> velocityAngularFactorMap = {
+  VelocityAngular.degreesPerHour : 1, 
+  VelocityAngular.degreesPerMinute : 0.0166667, 
+  VelocityAngular.degreesPerSecond : 0.0002778, 
+  VelocityAngular.radiansPerHour : 0.0174533, 
+  VelocityAngular.radiansPerMinute : 0.0002909, 
+  VelocityAngular.radiansPerSecond : 0.0000048, 
+  VelocityAngular.revolutionsPerHour :0.0027778 , 
+  VelocityAngular.revolutionsPerMinute : 0.0000463, 
+  VelocityAngular.revolutionsPerSecond : 0, 
+  };

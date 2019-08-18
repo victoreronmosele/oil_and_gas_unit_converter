@@ -439,52 +439,52 @@ void main() {
       bool allVolumeGasEnumsAreMapped =
           areAllEnumsValuesMappedToFactors<VolumeGas>(
               VolumeGas.values, volumeGasFactorMap);
-      // bool allCrudeOilEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<CrudeOil>(
-      //         CrudeOil.values, crudeOilFactorMap);
-      // bool allFluidConsistencyEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<FluidConsistency>(
-      //         FluidConsistency.values, fluidConsistencyFactorMap);
-      // bool allFluidVelocityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<FluidVelocity>(
-      //         FluidVelocity.values, fluidVelocityFactorMap);
-      // bool allFluidYieldPointEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<FluidYieldPoint>(
-      //         FluidYieldPoint.values, fluidYieldPointFactorMap);
-      // bool allLiquidProductionRateEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<LiquidProductionRate>(
-      //         LiquidProductionRate.values, liquidProductionRateFactorMap);
-      // bool allViscosityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<Viscosity>(
-      //         Viscosity.values, viscosityFactorMap);
-      // bool allElectricCurrentEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<ElectricCurrent>(
-      //         ElectricCurrent.values, electricCurrentFactorMap);
-      // bool allForceEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<Force>(Force.values, forceFactorMap);
-      // bool allFractureConductivityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<FractureConductivity>(
-      //         FractureConductivity.values, fractureConductivityFactorMap);
-      // bool allFuelVolumeEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<FuelVolume>(
-      //         FuelVolume.values, fuelVolumeFactorMap);
-      // bool allHeatCapacityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<HeatCapacity>(
-      //         HeatCapacity.values, heatCapacityFactorMap);
-      // bool allHeatConductivityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<HeatConductivity>(
-      //         HeatConductivity.values, heatConductivityFactorMap);
-      // bool allPowerEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<Power>(Power.values, powerFactorMap);
-      // bool allPowerArewEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<PowerArew>(
-      //         PowerArew.values, powerArewFactorMap);
-      // bool allVelocityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<Velocity>(
-      //         Velocity.values, velocityFactorMap);
-      // bool allVelocityAngularEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<VelocityAngular>(
-      //         VelocityAngular.values, velocityAngularFactorMap);
+      bool allCrudeOilEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<CrudeOil>(
+              CrudeOil.values, crudeOilFactorMap);
+      bool allFluidConsistencyEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FluidConsistency>(
+              FluidConsistency.values, fluidConsistencyFactorMap);
+      bool allFluidVelocityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FluidVelocity>(
+              FluidVelocity.values, fluidVelocityFactorMap);
+      bool allFluidYieldPointEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FluidYieldPoint>(
+              FluidYieldPoint.values, fluidYieldPointFactorMap);
+      bool allLiquidProductionRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<LiquidProductionRate>(
+              LiquidProductionRate.values, liquidProductionRateFactorMap);
+      bool allViscosityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Viscosity>(
+              Viscosity.values, viscosityFactorMap);
+      bool allElectricCurrentEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<ElectricCurrent>(
+              ElectricCurrent.values, electricCurrentFactorMap);
+      bool allForceEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Force>(Force.values, forceFactorMap);
+      bool allFractureConductivityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FractureConductivity>(
+              FractureConductivity.values, fractureConductivityFactorMap);
+      bool allFuelVolumeEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<FuelVolume>(
+              FuelVolume.values, fuelVolumeFactorMap);
+      bool allHeatCapacityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<HeatCapacity>(
+              HeatCapacity.values, heatCapacityFactorMap);
+      bool allHeatConductivityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<HeatConductivity>(
+              HeatConductivity.values, heatConductivityFactorMap);
+      bool allPowerEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Power>(Power.values, powerFactorMap);
+      bool allPowerArewEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<PowerArew>(
+              PowerArew.values, powerArewFactorMap);
+      bool allVelocityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Velocity>(
+              Velocity.values, velocityFactorMap);
+      bool allVelocityAngularEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<VelocityAngular>(
+              VelocityAngular.values, velocityAngularFactorMap);
       // bool allAxialDamplingCoefficientEnumsAreMapped =
       //     areAllEnumsValuesMappedToFactors<AxialDamplingCoefficient>(
       //         AxialDamplingCoefficient.values,
@@ -580,22 +580,22 @@ void main() {
       // expect(allTorsionalDampingCoefficientEnumsAreMapped, true);
       // expect(allTorsionalSpringConstantEnumsAreMapped, true);
       // expect(allYieldSlurryEnumsAreMapped, true);
-      // expect(allVelocityAngularEnumsAreMapped, true);
-      // expect(allVelocityEnumsAreMapped, true);
-      // expect(allPowerArewEnumsAreMapped, true);
-      // expect(allPowerEnumsAreMapped, true);
-      // expect(allHeatConductivityEnumsAreMapped, true);
-      // expect(allHeatCapacityEnumsAreMapped, true);
-      // expect(allFuelVolumeEnumsAreMapped, true);
-      // expect(allFractureConductivityEnumsAreMapped, true);
-      // expect(allForceEnumsAreMapped, true);
-      // expect(allElectricCurrentEnumsAreMapped, true);
-      // expect(allViscosityEnumsAreMapped, true);
-      // expect(allLiquidProductionRateEnumsAreMapped, true);
-      // expect(allFluidYieldPointEnumsAreMapped, true);
-      // expect(allFluidVelocityEnumsAreMapped, true);
-      // expect(allFluidConsistencyEnumsAreMapped, true);
-      // expect(allCrudeOilEnumsAreMapped, true);
+      expect(allVelocityAngularEnumsAreMapped, true);
+      expect(allVelocityEnumsAreMapped, true);
+      expect(allPowerArewEnumsAreMapped, true);
+      expect(allPowerEnumsAreMapped, true);
+      expect(allHeatConductivityEnumsAreMapped, true);
+      expect(allHeatCapacityEnumsAreMapped, true);
+      expect(allFuelVolumeEnumsAreMapped, true);
+      expect(allFractureConductivityEnumsAreMapped, true);
+      expect(allForceEnumsAreMapped, true);
+      expect(allElectricCurrentEnumsAreMapped, true);
+      expect(allViscosityEnumsAreMapped, true);
+      expect(allLiquidProductionRateEnumsAreMapped, true);
+      expect(allFluidYieldPointEnumsAreMapped, true);
+      expect(allFluidVelocityEnumsAreMapped, true);
+      expect(allFluidConsistencyEnumsAreMapped, true);
+      expect(allCrudeOilEnumsAreMapped, true);
       expect(allVolumeGasEnumsAreMapped, true);
       expect(allSpecificVolumeEnumsAreMapped, true);
       expect(allLiquefiedNaturalGasEnumsAreMapped, true);

@@ -19,3 +19,13 @@ Map<CrudeOil, String> crudeOilValuesMap = {
       'Thousand Barrels of Oil Equivalent(KBOE)',
   CrudeOil.tonneOfOilEquivalent: 'Tonne of Oil Equivalent(toe)',
 };
+
+Map<CrudeOil, num> crudeOilFactorMap = {
+  CrudeOil.barrrelPetroleum :1 , 
+  CrudeOil.barrelOfOilEquivalent :1 , 
+  CrudeOil.gallon : 42, 
+  CrudeOil.kiloliter :  0.1589873, 
+  CrudeOil.millionBarrelsOfOilEquivalent : 0.000001, 
+  CrudeOil.thousandBarrelsOfOilEquivalent : 0.001, 
+  CrudeOil.tonneOfOilEquivalent : 0.1363636, 
+  };
