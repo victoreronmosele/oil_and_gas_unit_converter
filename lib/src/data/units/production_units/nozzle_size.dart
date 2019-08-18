@@ -13,3 +13,11 @@ Map<NozzleSize, String> nozzleSizeValuesMap = {
   NozzleSize.oneSixtyFourthPerInch: 'One Sixty-fourth per Inch(1/64 in)',
   NozzleSize.oneThirtySecondPerInch: 'One Thirty-second per Inch(1/32in)',
 };
+
+Map<NozzleSize, num> nozzleSizeFactorMap = {
+  NozzleSize.millimeter: 1,
+  NozzleSize.oneEightPerInch: 0.3149606,
+  NozzleSize.oneSixteenthPerInch: 0.6299213,
+  NozzleSize.oneSixtyFourthPerInch: 2.519685,
+  NozzleSize.oneThirtySecondPerInch: 1.2598425,
+};

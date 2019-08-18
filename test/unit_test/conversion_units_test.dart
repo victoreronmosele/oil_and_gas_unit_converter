@@ -519,57 +519,57 @@ void main() {
       bool allYieldSlurryEnumsAreMapped =
           areAllEnumsValuesMappedToFactors<YieldSlurry>(
               YieldSlurry.values, yieldSlurryFactorMap);
-      // bool allNozzleSizeEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<NozzleSize>(
-      //         NozzleSize.values, nozzleSizeFactorMap);
-      // bool allNozzleSpeedEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<NozzleSpeed>(
-      //         NozzleSpeed.values, nozzleSpeedFactorMap);
-      // bool allOilProductionIndexEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<OilProductionIndex>(
-      //         OilProductionIndex.values, oilProductionIndexFactorMap);
-      // bool allPermeabilityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<Permeability>(
-      //         Permeability.values, permeabilityFactorMap);
-      // bool allPipeCapacityEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<PipeCapacity>(
-      //         PipeCapacity.values, pipeCapacityFactorMap);
-      // bool allProductionRateEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<ProductionRate>(
-      //         ProductionRate.values, productionRateFactorMap);
-      // bool allRotationEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<Rotation>(
-      //         Rotation.values, rotationFactorMap);
-      // bool allSectionModulusEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<SectionModulus>(
-      //         SectionModulus.values, sectionModulusFactorMap);
-      // bool allSectionModulusMomentOfSectionEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<SectionModulusMomentOfSection>(
-      //         SectionModulusMomentOfSection.values,
-      //         sectionModulusMomentOfSectionFactorMap);
-      // bool allStressElasticModulusEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<StressElasticModulus>(
-      //         StressElasticModulus.values, stressElasticModulusFactorMap);
-      // bool allStrokeRateEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<StrokeRate>(
-      //         StrokeRate.values, strokeRateFactorMap);
-      // bool allStrokeVolumeEnumsAreMapped =
-      //     areAllEnumsValuesMappedToFactors<StrokeVolume>(
-      //         StrokeVolume.values, strokeVolumeFactorMap);
+      bool allNozzleSizeEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<NozzleSize>(
+              NozzleSize.values, nozzleSizeFactorMap);
+      bool allNozzleSpeedEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<NozzleSpeed>(
+              NozzleSpeed.values, nozzleSpeedFactorMap);
+      bool allOilProductionIndexEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<OilProductionIndex>(
+              OilProductionIndex.values, oilProductionIndexFactorMap);
+      bool allPermeabilityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Permeability>(
+              Permeability.values, permeabilityFactorMap);
+      bool allPipeCapacityEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<PipeCapacity>(
+              PipeCapacity.values, pipeCapacityFactorMap);
+      bool allProductionRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<ProductionRate>(
+              ProductionRate.values, productionRateFactorMap);
+      bool allRotationEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<Rotation>(
+              Rotation.values, rotationFactorMap);
+      bool allSectionModulusEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<SectionModulus>(
+              SectionModulus.values, sectionModulusFactorMap);
+      bool allSectionModulusMomentOfSectionEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<SectionModulusMomentOfSection>(
+              SectionModulusMomentOfSection.values,
+              sectionModulusMomentOfSectionFactorMap);
+      bool allStressElasticModulusEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<StressElasticModulus>(
+              StressElasticModulus.values, stressElasticModulusFactorMap);
+      bool allStrokeRateEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<StrokeRate>(
+              StrokeRate.values, strokeRateFactorMap);
+      bool allStrokeVolumeEnumsAreMapped =
+          areAllEnumsValuesMappedToFactors<StrokeVolume>(
+              StrokeVolume.values, strokeVolumeFactorMap);
 
-      // expect(allNozzleSizeEnumsAreMapped, true);
-      // expect(allNozzleSpeedEnumsAreMapped, true);
-      // expect(allOilProductionIndexEnumsAreMapped, true);
-      // expect(allPermeabilityEnumsAreMapped, true);
-      // expect(allPipeCapacityEnumsAreMapped, true);
-      // expect(allProductionRateEnumsAreMapped, true);
-      // expect(allRotationEnumsAreMapped, true);
-      // expect(allSectionModulusEnumsAreMapped, true);
-      // expect(allSectionModulusMomentOfSectionEnumsAreMapped, true);
-      // expect(allStressElasticModulusEnumsAreMapped, true);
-      // expect(allStrokeRateEnumsAreMapped, true);
-      // expect(allStrokeVolumeEnumsAreMapped, true);
-      // expect(allAxialDamplingCoefficientEnumsAreMapped, true);
+      expect(allNozzleSizeEnumsAreMapped, true);
+      expect(allNozzleSpeedEnumsAreMapped, true);
+      expect(allOilProductionIndexEnumsAreMapped, true);
+      expect(allPermeabilityEnumsAreMapped, true);
+      expect(allPipeCapacityEnumsAreMapped, true);
+      expect(allProductionRateEnumsAreMapped, true);
+      expect(allRotationEnumsAreMapped, true);
+      expect(allSectionModulusEnumsAreMapped, true);
+      expect(allSectionModulusMomentOfSectionEnumsAreMapped, true);
+      expect(allStressElasticModulusEnumsAreMapped, true);
+      expect(allStrokeRateEnumsAreMapped, true);
+      expect(allStrokeVolumeEnumsAreMapped, true);
+      expect(allAxialDamplingCoefficientEnumsAreMapped, true);
       expect(allAxialSpringConstantEnumsAreMapped, true);
       expect(allDoglegEnumsAreMapped, true);
       expect(allDrillingRateEnumsAreMapped, true);
