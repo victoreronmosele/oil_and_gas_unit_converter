@@ -41,6 +41,3 @@ Map<BasicConversions, String> basicConversionsValuesMap = {
   BasicConversions.weight: 'Weight',
   BasicConversions.weightPerUnitLength: 'Weight per Unit Length'
 };
-
-
-

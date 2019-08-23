@@ -6,6 +6,6 @@ Map<Permeability, String> permeabilityValuesMap = {
 };
 
 Map<Permeability, num> permeabilityFactorMap = {
-  Permeability.darcy : 1, 
-  Permeability.milliDarcy : 1000, 
-  };
+  Permeability.darcy: 1,
+  Permeability.milliDarcy: 1000,
+};

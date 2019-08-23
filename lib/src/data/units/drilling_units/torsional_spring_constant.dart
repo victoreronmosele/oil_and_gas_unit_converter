@@ -8,6 +8,6 @@ Map<TorsionalSpringConstant, String> torsionalSpringConstantValuesMap = {
 };
 
 Map<TorsionalSpringConstant, num> torsionalSpringConstantFactorMap = {
-  TorsionalSpringConstant.newtonMeterPerRadian :1 , 
-  TorsionalSpringConstant.poundInchPerRadian : 1.0159504, 
-  };
+  TorsionalSpringConstant.newtonMeterPerRadian: 1,
+  TorsionalSpringConstant.poundInchPerRadian: 1.0159504,
+};

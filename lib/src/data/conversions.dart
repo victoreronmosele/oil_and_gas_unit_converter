@@ -15,13 +15,3 @@ Map<Conversions, String> conversionsValuesMap = {
   Conversions.drilling: 'Drilling Conversions',
   Conversions.production: 'Production Conversions'
 };
-
-
-
-
-
-
-
-
-
-

@@ -14,7 +14,7 @@ import 'package:oil_and_gas_unit_converter/src/model/units/drilling_units/torsio
 import 'package:oil_and_gas_unit_converter/src/model/units/drilling_units/torsional_spring_constant.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/drilling_units/yield_slurry.dart';
 
-class DrillingConversionType  extends Conversion{
+class DrillingConversionType extends Conversion {
   Map conversionStringValueMap = conversionsValuesMap;
 
   List conversionUnitTypes = DrillingConversions.values;
@@ -22,16 +22,18 @@ class DrillingConversionType  extends Conversion{
       conversionUnitObjectMap[drillingConversion];
 
   Map<dynamic, Unit> conversionUnitObjectMap = {
-  DrillingConversions.axialDamplingCoefficient : AxialDamplingCoefficientUnit(),
-  DrillingConversions.axialSpringConstant : AxialSpringConstantUnit(),
-  DrillingConversions.dogleg : DoglegUnit(),
-  DrillingConversions.drillingRate : DrillingRateUnit(),
-  DrillingConversions.footageCost : FootageCostUnit(),
-  DrillingConversions.mudWeight :MudWeightUnit() ,
-  DrillingConversions.pressureGradient : PressureGradientUnit(),
-  DrillingConversions.pumpingAndFlowRate : PumpingAndFlowRateUnit(),
-  DrillingConversions.torsionalDamplingCoefficient : TorsionalDamplingCoefficientUnit(),
-  DrillingConversions.torsionalSpringConstant : TorsionalSpringConstantUnit(),
-  DrillingConversions.yieldSlurry : YieldSlurryUnit(),
+    DrillingConversions.axialDamplingCoefficient:
+        AxialDamplingCoefficientUnit(),
+    DrillingConversions.axialSpringConstant: AxialSpringConstantUnit(),
+    DrillingConversions.dogleg: DoglegUnit(),
+    DrillingConversions.drillingRate: DrillingRateUnit(),
+    DrillingConversions.footageCost: FootageCostUnit(),
+    DrillingConversions.mudWeight: MudWeightUnit(),
+    DrillingConversions.pressureGradient: PressureGradientUnit(),
+    DrillingConversions.pumpingAndFlowRate: PumpingAndFlowRateUnit(),
+    DrillingConversions.torsionalDamplingCoefficient:
+        TorsionalDamplingCoefficientUnit(),
+    DrillingConversions.torsionalSpringConstant: TorsionalSpringConstantUnit(),
+    DrillingConversions.yieldSlurry: YieldSlurryUnit(),
   };
 }

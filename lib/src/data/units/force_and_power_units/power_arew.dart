@@ -7,6 +7,6 @@ Map<PowerArew, String> powerArewValuesMap = {
 };
 
 Map<PowerArew, num> powerArewFactorMap = {
-  PowerArew.horsePowerPerSquareInch : 1, 
-  PowerArew.kilowattPerSquareMillimeter :0.001156 , 
-  };
+  PowerArew.horsePowerPerSquareInch: 1,
+  PowerArew.kilowattPerSquareMillimeter: 0.001156,
+};

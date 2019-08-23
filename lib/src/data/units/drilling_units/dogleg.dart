@@ -6,6 +6,6 @@ Map<Dogleg, String> doglegValuesMap = {
 };
 
 Map<Dogleg, num> doglegFactorMap = {
-  Dogleg.degPer100ft : 1, 
-  Dogleg.degPer30m : 0.9843004, 
-  };
+  Dogleg.degPer100ft: 1,
+  Dogleg.degPer30m: 0.9843004,
+};

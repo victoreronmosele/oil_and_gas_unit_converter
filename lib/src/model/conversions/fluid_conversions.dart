@@ -9,19 +9,19 @@ import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/fluid_yie
 import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/liquid_production_rate.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/viscosiity.dart';
 
-class FluidConversionType  extends Conversion {
-   Map conversionStringValueMap = conversionsValuesMap;
+class FluidConversionType extends Conversion {
+  Map conversionStringValueMap = conversionsValuesMap;
 
   List conversionUnitTypes = FluidConversions.values;
   Unit getUnit<FluidConversions>(FluidConversions fluidConversion) =>
       conversionUnitObjectMap[fluidConversion];
 
-  Map <dynamic, Unit>conversionUnitObjectMap = {
-  FluidConversions.crudeOil: CrudeOilUnit(),
-  FluidConversions.fluidConsistency: FluidConsistencyUnit(),
-  FluidConversions.fluidVelocity: FluidVelocityUnit(),
-  FluidConversions.fluidYieldPoint: FluidYieldPointUnit(),
-  FluidConversions.liquidProductionRate: LiquidProductionRateUnit(),
-  FluidConversions.viscosity: ViscosityUnit(),
+  Map<dynamic, Unit> conversionUnitObjectMap = {
+    FluidConversions.crudeOil: CrudeOilUnit(),
+    FluidConversions.fluidConsistency: FluidConsistencyUnit(),
+    FluidConversions.fluidVelocity: FluidVelocityUnit(),
+    FluidConversions.fluidYieldPoint: FluidYieldPointUnit(),
+    FluidConversions.liquidProductionRate: LiquidProductionRateUnit(),
+    FluidConversions.viscosity: ViscosityUnit(),
   };
 }

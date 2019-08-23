@@ -8,8 +8,8 @@ Map<FuelVolume, String> fuelVolumeValuesMap = {
 };
 
 Map<FuelVolume, num> fuelVolumeFactorMap = {
-  FuelVolume.barrel : 1, 
-  FuelVolume.gallon : 42, 
-  FuelVolume.liter : 158.9872949, 
-  FuelVolume.milliliter : 158987.294928, 
-  };
+  FuelVolume.barrel: 1,
+  FuelVolume.gallon: 42,
+  FuelVolume.liter: 158.9872949,
+  FuelVolume.milliliter: 158987.294928,
+};

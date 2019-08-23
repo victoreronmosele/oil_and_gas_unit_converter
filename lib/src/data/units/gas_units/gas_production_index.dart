@@ -26,12 +26,13 @@ Map<GasProductionIndex, String> gasProductionIndexValuesMap = {
 };
 
 Map<GasProductionIndex, num> gasProductionIndexFactorMap = {
-  GasProductionIndex.cubicMeterPerDayMegaPascal : 1, 
-  GasProductionIndex.cubicMeterPerDayKiloPascal : 1000, 
-  GasProductionIndex.cubicMeterPerHour : 41.6675544, 
-  GasProductionIndex.millionStandardCubicFeetPerDayPerPoundsPerSquareInch : 0.2436699, 
-  GasProductionIndex.mscfHrPsi : 10.152921, 
-  GasProductionIndex.mscfPsi : 243.6699, 
-  GasProductionIndex.scfHrPsi : 10152.9209608, 
-  GasProductionIndex.standardCubicFeetPerDayPerPoundsPerSquareInch : 243669.9, 
-  };
+  GasProductionIndex.cubicMeterPerDayMegaPascal: 1,
+  GasProductionIndex.cubicMeterPerDayKiloPascal: 1000,
+  GasProductionIndex.cubicMeterPerHour: 41.6675544,
+  GasProductionIndex.millionStandardCubicFeetPerDayPerPoundsPerSquareInch:
+      0.2436699,
+  GasProductionIndex.mscfHrPsi: 10.152921,
+  GasProductionIndex.mscfPsi: 243.6699,
+  GasProductionIndex.scfHrPsi: 10152.9209608,
+  GasProductionIndex.standardCubicFeetPerDayPerPoundsPerSquareInch: 243669.9,
+};

@@ -10,10 +10,10 @@ Map<Time, String> timeValuesMap = {
 };
 
 Map<Time, num> timeFactorMap = {
-  Time.day : 1, 
-  Time.decade : 0.000274, 
-  Time.hour : 24, 
-  Time.minute : 1440, 
-  Time.second : 86400, 
-  Time.year : 0.0027397, 
-  };
+  Time.day: 1,
+  Time.decade: 0.000274,
+  Time.hour: 24,
+  Time.minute: 1440,
+  Time.second: 86400,
+  Time.year: 0.0027397,
+};

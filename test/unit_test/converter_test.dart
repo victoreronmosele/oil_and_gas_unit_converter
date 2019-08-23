@@ -10,6 +10,7 @@ import 'package:oil_and_gas_unit_converter/src/model/conversion.dart';
 import 'package:oil_and_gas_unit_converter/src/model/conversions/basic_conversion.dart';
 import 'package:oil_and_gas_unit_converter/src/model/conversions_categories.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
+import 'package:oil_and_gas_unit_converter/src/model/units/conversion_operation.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -19,14 +20,17 @@ void main() {
       num valueToBeConverted = 100;
       num expectedValue = 3047.999902464003;
 
-      var convertedValue = converter.convert<Acceleration>(
-          value: valueToBeConverted,
+      ConversionOperation conversionOperation = ConversionOperation(
+          valueToBeConverted: valueToBeConverted,
           from: Acceleration.centimeterPerSquareSecond,
           to: Acceleration.footPerSquareSecond,
           unit: BasicConversionType().getUnit(BasicConversions.acceleration));
 
+      converter.conversionOperation = conversionOperation;
+
+      var convertedValue = converter.convertedValue;
+
       expect(convertedValue, expectedValue);
     });
   });
-
-  }
+}

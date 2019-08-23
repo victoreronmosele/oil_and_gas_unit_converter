@@ -6,6 +6,6 @@ Map<AxialSpringConstant, String> axialSpringConstantValuesMap = {
 };
 
 Map<AxialSpringConstant, num> axialSpringConstantFactorMap = {
-  AxialSpringConstant.newtonPerMeter : 1, 
-  AxialSpringConstant.poundPerInch : 1.016, 
-  };
+  AxialSpringConstant.newtonPerMeter: 1,
+  AxialSpringConstant.poundPerInch: 1.016,
+};

@@ -23,13 +23,13 @@ Map<SpecificVolume, String> specificVolumeValuesMap = {
 };
 
 Map<SpecificVolume, num> specificVolumeFactorMap = {
-  SpecificVolume.barrelsPerTonUK : 1, 
-  SpecificVolume.barrelsPerTonUS : 0.8928571, 
-  SpecificVolume.cubicFootPerPound : 0.0025065, 
-  SpecificVolume.cubicInchPerPound : 4.33125, 
-  SpecificVolume.cubicMeterPerKilogram : 0.0001565, 
-  SpecificVolume.gallonsUKPerPound : 0.0156126, 
-  SpecificVolume.gallonsUSPerPound : 0.01875, 
-  SpecificVolume.literPerGram : 0.0001565, 
-  SpecificVolume.literPerKilogram : 0.0001565, 
-  };
+  SpecificVolume.barrelsPerTonUK: 1,
+  SpecificVolume.barrelsPerTonUS: 0.8928571,
+  SpecificVolume.cubicFootPerPound: 0.0025065,
+  SpecificVolume.cubicInchPerPound: 4.33125,
+  SpecificVolume.cubicMeterPerKilogram: 0.0001565,
+  SpecificVolume.gallonsUKPerPound: 0.0156126,
+  SpecificVolume.gallonsUSPerPound: 0.01875,
+  SpecificVolume.literPerGram: 0.0001565,
+  SpecificVolume.literPerKilogram: 0.0001565,
+};

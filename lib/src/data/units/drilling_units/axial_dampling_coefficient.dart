@@ -7,6 +7,6 @@ Map<AxialDamplingCoefficient, String> axialDamplingCoefficientValuesMap = {
 };
 
 Map<AxialDamplingCoefficient, num> axialDamplingCoefficientFactorMap = {
-  AxialDamplingCoefficient.newtonSecondPerMeter : 1, 
-   AxialDamplingCoefficient.poundSecondPerInch : 1.016, 
-   };
+  AxialDamplingCoefficient.newtonSecondPerMeter: 1,
+  AxialDamplingCoefficient.poundSecondPerInch: 1.016,
+};

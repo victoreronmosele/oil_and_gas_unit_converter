@@ -6,6 +6,6 @@ Map<FractureConductivity, String> fractureConductivityValuesMap = {
 };
 
 Map<FractureConductivity, num> fractureConductivityFactorMap = {
-  FractureConductivity.darcyInch : 1, 
-   FractureConductivity.mum2m : 22.7837142, 
-   };
+  FractureConductivity.darcyInch: 1,
+  FractureConductivity.mum2m: 22.7837142,
+};

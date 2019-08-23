@@ -1,5 +1,4 @@
- class Unit<T> {
-   Map unitValuesMap;
-   Map unitFactorMap;
+class Unit<T> {
+  Map unitValuesMap;
+  Map unitFactorMap;
 }
-

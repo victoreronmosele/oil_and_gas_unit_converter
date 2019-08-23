@@ -9,8 +9,7 @@ import 'package:oil_and_gas_unit_converter/src/model/conversions/production_conv
 
 class ConversionCategories {
   static var conversionCategoriesMap = conversionsValuesMap;
-  static List get conversionCategories =>
-      conversionCategoriesMap.keys.toList();
+  static List get conversionCategories => conversionCategoriesMap.keys.toList();
   static Map<Conversions, Conversion> conversionCategoriesModelMap = {
     Conversions.basic: BasicConversionType(),
     Conversions.gas: GasConversionType(),

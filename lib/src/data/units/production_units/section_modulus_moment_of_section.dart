@@ -14,9 +14,10 @@ Map<SectionModulusMomentOfSection, String>
   SectionModulusMomentOfSection.meterToPower4: 'Meter to Power 4(m4)',
 };
 
-Map<SectionModulusMomentOfSection, num> sectionModulusMomentOfSectionFactorMap = {
-  SectionModulusMomentOfSection.centimeterToThePower4 :1 , 
-  SectionModulusMomentOfSection.footToThePower4 : 0.0000012, 
-  SectionModulusMomentOfSection.inchToThePower4 : 0.0240251, 
-  SectionModulusMomentOfSection.meterToPower4 : 0, 
-  };
+Map<SectionModulusMomentOfSection, num> sectionModulusMomentOfSectionFactorMap =
+    {
+  SectionModulusMomentOfSection.centimeterToThePower4: 1,
+  SectionModulusMomentOfSection.footToThePower4: 0.0000012,
+  SectionModulusMomentOfSection.inchToThePower4: 0.0240251,
+  SectionModulusMomentOfSection.meterToPower4: 0,
+};

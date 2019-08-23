@@ -10,20 +10,20 @@ import 'package:oil_and_gas_unit_converter/src/model/units/gas_units/liquefied_n
 import 'package:oil_and_gas_unit_converter/src/model/units/gas_units/specific_volume.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/gas_units/volume.dart';
 
-class GasConversionType  extends Conversion{
-    Map conversionStringValueMap = conversionsValuesMap;
+class GasConversionType extends Conversion {
+  Map conversionStringValueMap = conversionsValuesMap;
 
   List conversionUnitTypes = GasConversions.values;
   Unit getUnit<GasConversions>(GasConversions gasConversion) =>
       conversionUnitObjectMap[gasConversion];
 
   Map<dynamic, Unit> conversionUnitObjectMap = {
-  GasConversions.gasInjectionRate :GasInjectionRateUnit() ,
-  GasConversions.gasProductionIndex : GasProductionIndexUnit(),
-  GasConversions.gasProductionRate : GasProductionRateUnit(),
-  GasConversions.gasVolume : GasVolumeUnit(),
-  GasConversions.liquefiedNaturalGas : LiquefiedNaturalGasUnit(),
-  GasConversions.specificVolume : SpecificVolumeUnit(),
-  GasConversions.volume : VolumeGasUnit(),
+    GasConversions.gasInjectionRate: GasInjectionRateUnit(),
+    GasConversions.gasProductionIndex: GasProductionIndexUnit(),
+    GasConversions.gasProductionRate: GasProductionRateUnit(),
+    GasConversions.gasVolume: GasVolumeUnit(),
+    GasConversions.liquefiedNaturalGas: LiquefiedNaturalGasUnit(),
+    GasConversions.specificVolume: SpecificVolumeUnit(),
+    GasConversions.volume: VolumeGasUnit(),
   };
 }
