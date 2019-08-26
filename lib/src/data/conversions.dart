@@ -8,10 +8,10 @@ enum Conversions {
 }
 
 Map<Conversions, String> conversionsValuesMap = {
-  Conversions.basic: 'Basic Conversion',
-  Conversions.gas: 'Gas Conversions',
-  Conversions.fluid: 'Fluid Conversions',
-  Conversions.forceAndPower: 'Force & Power Conversions',
-  Conversions.drilling: 'Drilling Conversions',
-  Conversions.production: 'Production Conversions'
+  Conversions.basic: 'Basic',
+  Conversions.gas: 'Gas',
+  Conversions.fluid: 'Fluid',
+  Conversions.forceAndPower: 'Force & Power',
+  Conversions.drilling: 'Drilling',
+  Conversions.production: 'Production'
 };

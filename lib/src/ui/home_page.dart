@@ -1,8 +1,12 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
+import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
 import 'package:oil_and_gas_unit_converter/src/utils/app_constants.dart';
-import 'dart:io' show Platform;
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -22,29 +26,32 @@ class _HomePageState extends State<HomePage> {
     print(
         'Screen size is ${MediaQuery.of(context).size} on ${Platform.operatingSystem}');
 
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(18, 22, 28, 1),
-      drawer: Drawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        title: Text(title),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: EdgeInsets.all(screenPadding),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(
-                    bottom: ScreenUtil.getInstance().setHeight(50.0),
+    return ChangeNotifierProvider<Converter>(
+      builder: (context) => Converter(),
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(18, 22, 28, 1),
+        drawer: Drawer(),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          title: Text(title),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.all(screenPadding),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(
+                      bottom: ScreenUtil.getInstance().setHeight(50.0),
+                    ),
+                    child: ConversionTopPanel(),
                   ),
-                  child: ConversionTopPanel(),
-                ),
-                ConversionCard(),
-              ],
+                  ConversionCard(),
+                ],
+              ),
             ),
           ),
         ),
@@ -60,6 +67,11 @@ class ConversionTopPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final converter = Provider.of<Converter>(context);
+    final currentConversionCategory = converter.currentConversionCategory;
+    final conversionCategoriesList = converter.conversionCategoriesList;
+    final conversionCategoriesMap = converter.conversionCategoriesMap;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -70,25 +82,41 @@ class ConversionTopPanel extends StatelessWidget {
             fontSize: ScreenUtil(allowFontScaling: false).setSp(80),
           ),
         ),
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade500, width: 0.5),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-          child: DropdownButton(
-            style: TextStyle(color: Colors.white),
-            value: 'Dropdown',
-            isDense: true,
-            iconEnabledColor: Colors.grey.shade800,
-            underline: Container(),
-            onChanged: (value) {},
-            items: [
-              DropdownMenuItem(
-                value: 'Dropdown',
-                child: Text('Dropdown'),
-              )
-            ],
+        SizedBox(
+          width: ScreenUtil.getInstance().setWidth(50.0),
+        ),
+        Flexible(
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey.shade500, width: 0.5),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+              child: DropdownButton<Conversions>(
+                  style: TextStyle(color: Colors.red),
+                  value: currentConversionCategory,
+                  key: Key('conversionCategoryDropdown'),
+                  isDense: true,
+                  iconEnabledColor: Colors.grey.shade800,
+                  underline: Container(),
+                  onChanged: (value) {
+                    converter.currentConversionCategory = value;
+                  },
+                  items: conversionCategoriesList.map((conversionCategory) {
+                    String conversionCategoryText =
+                        conversionCategoriesMap[conversionCategory];
+
+                    return DropdownMenuItem(
+                      key: Key(conversionCategoryText),
+                      value: conversionCategory,
+                      child: Text(
+                        conversionCategoryText,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    );
+                  }).toList()),
+            ),
           ),
         ),
       ],
@@ -184,11 +212,10 @@ class ConversionBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           DropdownButton(
-
-             style: TextStyle(
-               color: Colors.black,
-               fontSize: ScreenUtil(allowFontScaling: false).setSp(50),
-             ),
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: ScreenUtil(allowFontScaling: false).setSp(50),
+            ),
             value: 'Dropdown',
             isDense: true,
             iconEnabledColor: Colors.grey.shade800,

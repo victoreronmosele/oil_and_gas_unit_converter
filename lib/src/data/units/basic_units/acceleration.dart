@@ -15,7 +15,7 @@ enum Acceleration {
   millimeterPerSquareSecond
 }
 
-Map<Acceleration, String> accelerationStringValueMap = {
+Map<Acceleration, String> accelerationValuesMap = {
   Acceleration.centimeterPerSquareSecond: 'Centimeter per Square Second(cm/s2)',
   Acceleration.footPerSquareSecond: 'Foot per Square Second(ft/s2)',
   Acceleration.galileo: 'Galileo(gal)',

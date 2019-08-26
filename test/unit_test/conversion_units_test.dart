@@ -99,7 +99,7 @@ void main() {
               ProductionConversions.values, productionConversionsValuesMap);
       bool allAccelerationEnumsAreMapped =
           areAllEnumsValuesMappedToStringValues<Acceleration>(
-              Acceleration.values, accelerationStringValueMap);
+              Acceleration.values, accelerationValuesMap);
       bool allAngleEnumsAreMapped =
           areAllEnumsValuesMappedToStringValues<Angle>(
               Angle.values, angleValuesMap);
