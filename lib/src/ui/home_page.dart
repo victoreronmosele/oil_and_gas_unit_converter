@@ -204,6 +204,8 @@ class ConversionBox extends StatelessWidget {
     final converter = Provider.of<Converter>(context);
     List conversionUnitTypes = converter.conversionUnitTypes;
     Map conversionStringValueMap = converter.conversionStringValueMap;
+    dynamic conversionToUnitValue = converter.currentToUnit;
+    dynamic conversionFromUnitValue = converter.currentFromUnit;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -223,20 +225,26 @@ class ConversionBox extends StatelessWidget {
                       color: Colors.black,
                       fontSize: ScreenUtil(allowFontScaling: false).setSp(50),
                     ),
-                    value: conversionUnitTypes.first,
+                    value: top == true
+                        ? conversionToUnitValue
+                        : conversionFromUnitValue,
                     key: Key(
                         '${top == true ? 'from' : 'to'}ConversionCategoryUnitDropDown'),
                     isDense: true,
                     isExpanded: true,
                     iconEnabledColor: Colors.grey.shade800,
                     underline: Container(),
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      top == true
+                          ? converter.currentToUnit = value
+                          : converter.currentFromUnit = value;
+                    },
                     items: conversionUnitTypes.map((conversionUnitType) {
                       String conversionUnitTypeString =
                           conversionStringValueMap[conversionUnitType];
-
                       return DropdownMenuItem(
                         value: conversionUnitType,
+                        key: Key(conversionUnitTypeString),
                         child: Text(
                           conversionUnitTypeString,
                         ),

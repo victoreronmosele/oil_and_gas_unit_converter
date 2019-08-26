@@ -22,9 +22,9 @@ Map<ProductionConversions, String> productionConversionsValuesMap = {
   ProductionConversions.productionRate: 'Production Rate',
   ProductionConversions.rotation: 'Rotation',
   ProductionConversions.sectionModulus: 'Section Modulus',
-  ProductionConversions.stressElasticModulus: 'Stress Elastic Modulus',
   ProductionConversions.sectionModulusMomentOfSection:
       'Section Modulus - Moment of Section',
+  ProductionConversions.stressElasticModulus: 'Stress Elastic Modulus',
   ProductionConversions.strokeRate: 'Stroke Rate',
   ProductionConversions.strokeVolume: 'Stroke Volume'
 };

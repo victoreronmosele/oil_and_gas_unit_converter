@@ -14,7 +14,6 @@ import 'package:oil_and_gas_unit_converter/src/model/conversions/force_and_power
 import 'package:oil_and_gas_unit_converter/src/model/conversions/gas_conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/model/conversions/production_conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/model/conversions_categories.dart';
-import 'package:oil_and_gas_unit_converter/src/model/unit.dart';
 import 'package:test/test.dart';
 
 void main() {

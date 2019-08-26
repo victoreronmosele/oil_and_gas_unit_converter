@@ -8,6 +8,36 @@ import 'package:oil_and_gas_unit_converter/src/model/units/conversion_operation.
 class Converter with ChangeNotifier {
   Conversions _currentConversionCategory;
 
+  dynamic get currentToUnit {
+    return _currentToUnit ??
+        ConversionCategories
+            .conversionCategoriesModelMap[_currentConversionCategory ??
+                ConversionCategories.conversionCategories.first]
+            .conversionUnitTypes
+            .first;
+  }
+
+  dynamic _currentToUnit;
+  set currentToUnit(dynamic currentUnitParam) {
+    _currentToUnit = currentUnitParam;
+    print('here $currentUnitParam');
+    notifyListeners();
+  }
+
+  dynamic get currentFromUnit =>
+      _currentFromUnit ??
+      ConversionCategories
+          .conversionCategoriesModelMap[_currentConversionCategory ??
+              ConversionCategories.conversionCategories.first]
+          .conversionUnitTypes
+          .first;
+  dynamic _currentFromUnit;
+  set currentFromUnit(dynamic currentFromUnitParam) {
+    _currentFromUnit = currentFromUnitParam;
+    print('here $currentFromUnitParam');
+    notifyListeners();
+  }
+
   Map<Conversions, String> get conversionCategoriesMap =>
       ConversionCategories.conversionCategoriesMap;
   List<Conversions> get conversionCategoriesList =>
@@ -15,6 +45,14 @@ class Converter with ChangeNotifier {
 
   set currentConversionCategory(Conversions conversionCategory) {
     _currentConversionCategory = conversionCategory;
+    _currentToUnit = ConversionCategories
+        .conversionCategoriesModelMap[_currentConversionCategory]
+        .conversionUnitTypes
+        .first;
+    _currentFromUnit = ConversionCategories
+        .conversionCategoriesModelMap[_currentConversionCategory]
+        .conversionUnitTypes
+        .first;
     notifyListeners();
   }
 
@@ -30,15 +68,13 @@ class Converter with ChangeNotifier {
   }
 
   List get conversionUnitTypes => ConversionCategories
-      .conversionCategoriesModelMap[_currentConversionCategory ??
-          ConversionCategories.conversionCategories.first]
+      .conversionCategoriesModelMap[currentConversionCategory]
       .conversionUnitTypes;
 
   Map get conversionStringValueMap => ConversionCategories
-      .conversionCategoriesModelMap[_currentConversionCategory ??
-          ConversionCategories.conversionCategories.first]
+      .conversionCategoriesModelMap[currentConversionCategory]
       .conversionStringValueMap;
- 
+
   num get convertedValue => _convertedValue;
 
   num _getConvertedValue<T>(ConversionOperation conversionOperation) {
