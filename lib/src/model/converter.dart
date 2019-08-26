@@ -29,6 +29,16 @@ class Converter with ChangeNotifier {
     notifyListeners();
   }
 
+  List get conversionUnitTypes => ConversionCategories
+      .conversionCategoriesModelMap[_currentConversionCategory ??
+          ConversionCategories.conversionCategories.first]
+      .conversionUnitTypes;
+
+  Map get conversionStringValueMap => ConversionCategories
+      .conversionCategoriesModelMap[_currentConversionCategory ??
+          ConversionCategories.conversionCategories.first]
+      .conversionStringValueMap;
+ 
   num get convertedValue => _convertedValue;
 
   num _getConvertedValue<T>(ConversionOperation conversionOperation) {

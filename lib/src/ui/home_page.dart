@@ -201,6 +201,10 @@ class ConversionBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final converter = Provider.of<Converter>(context);
+    List conversionUnitTypes = converter.conversionUnitTypes;
+    Map conversionStringValueMap = converter.conversionStringValueMap;
+
     return Padding(
       padding: EdgeInsets.only(
           top: top == true ? 1.5 * screenPadding : screenPadding / 4,
@@ -211,21 +215,34 @@ class ConversionBox extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          DropdownButton(
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: ScreenUtil(allowFontScaling: false).setSp(50),
-            ),
-            value: 'Dropdown',
-            isDense: true,
-            iconEnabledColor: Colors.grey.shade800,
-            underline: Container(),
-            onChanged: (value) {},
-            items: [
-              DropdownMenuItem(
-                value: 'Dropdown',
-                child: Text('Cm per Square N'),
-              )
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: DropdownButton(
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: ScreenUtil(allowFontScaling: false).setSp(50),
+                    ),
+                    value: conversionUnitTypes.first,
+                    key: Key(
+                        '${top == true ? 'from' : 'to'}ConversionCategoryUnitDropDown'),
+                    isDense: true,
+                    isExpanded: true,
+                    iconEnabledColor: Colors.grey.shade800,
+                    underline: Container(),
+                    onChanged: (value) {},
+                    items: conversionUnitTypes.map((conversionUnitType) {
+                      String conversionUnitTypeString =
+                          conversionStringValueMap[conversionUnitType];
+
+                      return DropdownMenuItem(
+                        value: conversionUnitType,
+                        child: Text(
+                          conversionUnitTypeString,
+                        ),
+                      );
+                    }).toList()),
+              ),
             ],
           ),
           SizedBox(
@@ -242,9 +259,6 @@ class ConversionBox extends StatelessWidget {
             height: screenPadding / 2,
           ),
           Text(
-            // top == true
-            // ? '''27800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'''
-            // :
             "48484848",
             style: TextStyle(
               fontSize: ScreenUtil(allowFontScaling: false).setSp(85),

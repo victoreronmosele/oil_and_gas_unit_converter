@@ -14,7 +14,7 @@ import 'package:oil_and_gas_unit_converter/src/model/units/force_and_power_units
 import 'package:oil_and_gas_unit_converter/src/model/units/force_and_power_units/velocity_angular.dart';
 
 class ForceAndPowerConversionType extends Conversion {
-  Map conversionStringValueMap = conversionsValuesMap;
+  Map conversionStringValueMap = forceAndPowerConversionsValuesMap;
 
   List conversionUnitTypes = ForceAndPowerConversions.values;
   Unit getUnit<ForceAndPowerConversions>(

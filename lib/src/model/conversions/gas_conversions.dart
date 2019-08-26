@@ -11,7 +11,7 @@ import 'package:oil_and_gas_unit_converter/src/model/units/gas_units/specific_vo
 import 'package:oil_and_gas_unit_converter/src/model/units/gas_units/volume.dart';
 
 class GasConversionType extends Conversion {
-  Map conversionStringValueMap = conversionsValuesMap;
+  Map conversionStringValueMap = gasConversionsValuesMap;
 
   List conversionUnitTypes = GasConversions.values;
   Unit getUnit<GasConversions>(GasConversions gasConversion) =>

@@ -15,7 +15,7 @@ import 'package:oil_and_gas_unit_converter/src/model/units/drilling_units/torsio
 import 'package:oil_and_gas_unit_converter/src/model/units/drilling_units/yield_slurry.dart';
 
 class DrillingConversionType extends Conversion {
-  Map conversionStringValueMap = conversionsValuesMap;
+  Map conversionStringValueMap = drillingConversionsValuesMap;
 
   List conversionUnitTypes = DrillingConversions.values;
   Unit getUnit<DrillingConversions>(DrillingConversions drillingConversion) =>

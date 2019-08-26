@@ -10,7 +10,7 @@ import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/liquid_pr
 import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/viscosiity.dart';
 
 class FluidConversionType extends Conversion {
-  Map conversionStringValueMap = conversionsValuesMap;
+  Map conversionStringValueMap = fluidConversionValuesMap;
 
   List conversionUnitTypes = FluidConversions.values;
   Unit getUnit<FluidConversions>(FluidConversions fluidConversion) =>

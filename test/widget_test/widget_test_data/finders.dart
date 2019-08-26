@@ -4,7 +4,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'keys.dart';
 
 final conversionCategoryDropdownFinder =
-    find.byKey(conversionCategoryDropdownKey);
+    getFinder(conversionCategoryDropdownKey);
 
+final fromConversionCategoryUnitDropdownFinder =
+    getFinder(fromConversionCategoryUnitDropdownKey);
+
+final toConversionCategoryUnitDropdownFinder =
+    getFinder(toConversionCategoryUnitDropdownKey);
 
 Finder getFinder(Key key) => find.byKey(key);

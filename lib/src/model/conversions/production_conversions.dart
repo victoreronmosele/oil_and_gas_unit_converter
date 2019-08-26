@@ -16,7 +16,7 @@ import 'package:oil_and_gas_unit_converter/src/model/units/production_units/stro
 import 'package:oil_and_gas_unit_converter/src/model/units/production_units/stroke_volume.dart';
 
 class ProductionConversionType extends Conversion {
-  Map conversionStringValueMap = conversionsValuesMap;
+  Map conversionStringValueMap = productionConversionsValuesMap;
 
   List conversionUnitTypes = ProductionConversions.values;
   Unit getUnit<ProductionConversions>(
