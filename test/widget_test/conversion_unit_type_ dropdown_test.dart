@@ -28,7 +28,7 @@ void main() {
     expect(unitTypeValue, firstUnitType);
   });
 
-  testWidgets('Unit dropdown contain correct unit string values',
+  testWidgets('Unit type dropdown contain correct unit type string values',
       (WidgetTester tester) async {
     await tester.pumpWidget(HomePageWrapper());
     await tester.tap(conversionCategoryDropdownFinder);
@@ -61,7 +61,7 @@ void main() {
     expect(unitTypeDropdownTextValueList, unitStringValueList);
   });
 
-  testWidgets('Unit dropdown contain correct unit enum values',
+  testWidgets('Unit type dropdown contain correct unit type enum values',
       (WidgetTester tester) async {
     await tester.pumpWidget(HomePageWrapper());
     await tester.tap(conversionCategoryDropdownFinder);
@@ -73,28 +73,30 @@ void main() {
 
     final conversionCategoryString =
         ConversionCategories.conversionCategoriesMap[conversionCategory];
-    Finder dropDownMenuItemFinder = getFinder(Key(conversionCategoryString));
+    Finder conversionCategorydropDownMenuItemFinder =
+        getFinder(Key(conversionCategoryString));
 
-    await tester.tap(dropDownMenuItemFinder.last);
+    await tester.tap(conversionCategorydropDownMenuItemFinder.last);
 
     await tester.pumpAndSettle();
 
-    final fromUnitDropdownEnumValueList =
+    final unitTypeDropdownEnumValueList =
         (unitTypeDropdownFinder.evaluate().single.widget as DropdownButton)
             .items
             .map((item) => item.value)
             .toList();
 
-    final unitEnumValueList = ConversionCategories
+    final unitTypeEnumValueList = ConversionCategories
         .conversionCategoriesModelMap[conversionCategory]
         .conversionStringValueMap
         .keys
         .toList();
 
-    expect(fromUnitDropdownEnumValueList, unitEnumValueList);
+    expect(unitTypeDropdownEnumValueList, unitTypeEnumValueList);
   });
 
-  testWidgets('Tapping on a unit dropdown item changes current dropdown value',
+  testWidgets(
+      'Tapping on a unit type dropdown item changes current dropdown value',
       (WidgetTester tester) async {
     await tester.pumpWidget(HomePageWrapper());
     await tester.tap(conversionCategoryDropdownFinder);
@@ -116,24 +118,24 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    final unitValue = ConversionCategories
+    final unitTypeValue = ConversionCategories
         .conversionCategoriesModelMap[conversionCategory].conversionUnitTypes
         .elementAt(
             Random().nextInt(ConversionCategories.conversionCategories.length));
 
-    final unitString = ConversionCategories
+    final unitTypeString = ConversionCategories
         .conversionCategoriesModelMap[conversionCategory]
-        .conversionStringValueMap[unitValue];
+        .conversionStringValueMap[unitTypeValue];
 
-    Finder unitDropDownMenuItemFinder = getFinder(Key(unitString));
+    Finder unitTypeDropDownMenuItemFinder = getFinder(Key(unitTypeString));
 
-    await tester.tap(unitDropDownMenuItemFinder.last);
+    await tester.tap(unitTypeDropDownMenuItemFinder.last);
     await tester.pumpAndSettle();
 
-    var unitDropdownCurrentValue =
+    var unitTypeDropdownCurrentValue =
         (unitTypeDropdownFinder.evaluate().single.widget as DropdownButton)
             .value;
 
-    expect(unitDropdownCurrentValue, unitValue);
+    expect(unitTypeDropdownCurrentValue, unitTypeValue);
   });
 }
