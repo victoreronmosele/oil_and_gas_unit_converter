@@ -11,27 +11,24 @@ import 'widget_test_data/widgets.dart';
 //TODO Remove Random() from tests and implement test for every item
 void main() {
   testWidgets(
-      'Conversion unit dropdowns shows first unit of first category by default',
+      'Conversion unit type dropdown shows first unit type of first category by default',
       (WidgetTester tester) async {
     await tester.pumpWidget(HomePageWrapper());
-    expect(fromConversionCategoryUnitDropdownFinder, findsOneWidget);
-    expect(toConversionCategoryUnitDropdownFinder, findsOneWidget);
+    expect(unitTypeDropdownFinder, findsOneWidget);
 
-    final fromConversionValue = fromUnitDropdownWidget.value;
-    final toConversionValue = toUnitDropdownWidget.value;
+    final unitTypeValue = unitTypeDropdownWidget.value;
 
     final firstConversionCategory =
         ConversionCategories.conversionCategories.first;
-    final firstUnit = ConversionCategories
+    final firstUnitType = ConversionCategories
         .conversionCategoriesModelMap[firstConversionCategory]
         .conversionUnitTypes
         .first;
 
-    expect(fromConversionValue, firstUnit);
-    expect(toConversionValue, firstUnit);
+    expect(unitTypeValue, firstUnitType);
   });
 
-  testWidgets('Unit dropdowns contain correct unit string values',
+  testWidgets('Unit dropdown contain correct unit string values',
       (WidgetTester tester) async {
     await tester.pumpWidget(HomePageWrapper());
     await tester.tap(conversionCategoryDropdownFinder);
@@ -49,19 +46,11 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    final fromUnitDropdownTextValueList =
-        (fromConversionCategoryUnitDropdownFinder.evaluate().single.widget
-                as DropdownButton)
+    final unitTypeDropdownTextValueList =
+        (unitTypeDropdownFinder.evaluate().single.widget as DropdownButton)
             .items
             .map((item) => (item.child as Text).data)
             .toList();
-    final toUnitDropdownTextValueList = (toConversionCategoryUnitDropdownFinder
-            .evaluate()
-            .single
-            .widget as DropdownButton)
-        .items
-        .map((item) => (item.child as Text).data)
-        .toList();
 
     final unitStringValueList = ConversionCategories
         .conversionCategoriesModelMap[conversionCategory]
@@ -69,11 +58,10 @@ void main() {
         .values
         .toList();
 
-    expect(fromUnitDropdownTextValueList, unitStringValueList);
-    expect(toUnitDropdownTextValueList, unitStringValueList);
+    expect(unitTypeDropdownTextValueList, unitStringValueList);
   });
 
-  testWidgets('Unit dropdowns contain correct unit enum values',
+  testWidgets('Unit dropdown contain correct unit enum values',
       (WidgetTester tester) async {
     await tester.pumpWidget(HomePageWrapper());
     await tester.tap(conversionCategoryDropdownFinder);
@@ -92,18 +80,10 @@ void main() {
     await tester.pumpAndSettle();
 
     final fromUnitDropdownEnumValueList =
-        (fromConversionCategoryUnitDropdownFinder.evaluate().single.widget
-                as DropdownButton)
+        (unitTypeDropdownFinder.evaluate().single.widget as DropdownButton)
             .items
             .map((item) => item.value)
             .toList();
-    final toUnitDropdownTextEnumList = (toConversionCategoryUnitDropdownFinder
-            .evaluate()
-            .single
-            .widget as DropdownButton)
-        .items
-        .map((item) => item.value)
-        .toList();
 
     final unitEnumValueList = ConversionCategories
         .conversionCategoriesModelMap[conversionCategory]
@@ -112,7 +92,6 @@ void main() {
         .toList();
 
     expect(fromUnitDropdownEnumValueList, unitEnumValueList);
-    expect(toUnitDropdownTextEnumList, unitEnumValueList);
   });
 
   testWidgets('Tapping on a unit dropdown item changes current dropdown value',
@@ -133,7 +112,7 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    await tester.tap(fromConversionCategoryUnitDropdownFinder);
+    await tester.tap(unitTypeDropdownFinder);
 
     await tester.pumpAndSettle();
 
@@ -145,18 +124,15 @@ void main() {
     final unitString = ConversionCategories
         .conversionCategoriesModelMap[conversionCategory]
         .conversionStringValueMap[unitValue];
-  
 
     Finder unitDropDownMenuItemFinder = getFinder(Key(unitString));
 
     await tester.tap(unitDropDownMenuItemFinder.last);
     await tester.pumpAndSettle();
 
-    var unitDropdownCurrentValue = (fromConversionCategoryUnitDropdownFinder
-            .evaluate()
-            .single
-            .widget as DropdownButton)
-        .value;
+    var unitDropdownCurrentValue =
+        (unitTypeDropdownFinder.evaluate().single.widget as DropdownButton)
+            .value;
 
     expect(unitDropdownCurrentValue, unitValue);
   });

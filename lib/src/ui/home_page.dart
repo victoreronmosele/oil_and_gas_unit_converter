@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
+import 'package:oil_and_gas_unit_converter/src/data/keys.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
 import 'package:oil_and_gas_unit_converter/src/utils/app_constants.dart';
 import 'package:provider/provider.dart';
@@ -204,8 +205,11 @@ class ConversionBox extends StatelessWidget {
     final converter = Provider.of<Converter>(context);
     List conversionUnitTypes = converter.conversionUnitTypes;
     Map conversionStringValueMap = converter.conversionStringValueMap;
-    dynamic conversionToUnitValue = converter.currentToUnit;
-    dynamic conversionFromUnitValue = converter.currentFromUnit;
+    dynamic conversionUnitTypeValue = converter.currentUnitType;
+    List fromUnitList = converter.fromUnitList;
+    dynamic fromUnit = converter.fromUnit;
+    List toUnitList = converter.toUnitList;
+    dynamic toUnit = converter.toUnit;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -217,54 +221,42 @@ class ConversionBox extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: DropdownButton(
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: ScreenUtil(allowFontScaling: false).setSp(50),
+          top == true
+              ? Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: DropdownButton(
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize:
+                                ScreenUtil(allowFontScaling: false).setSp(50),
+                          ),
+                          value: conversionUnitTypeValue,
+                          key: unitTypeDropdownKey,
+                          isDense: true,
+                          isExpanded: true,
+                          iconEnabledColor: Colors.grey.shade800,
+                          underline: Container(),
+                          onChanged: (value) {
+                            converter.currentUnitType = value;
+                          },
+                          items: conversionUnitTypes.map((conversionUnitType) {
+                            String conversionUnitTypeString =
+                                conversionStringValueMap[conversionUnitType];
+                            return DropdownMenuItem(
+                              value: conversionUnitType,
+                              key: Key(conversionUnitTypeString),
+                              child: Text(
+                                conversionUnitTypeString,
+                              ),
+                            );
+                          }).toList()),
                     ),
-                    value: top == true
-                        ? conversionToUnitValue
-                        : conversionFromUnitValue,
-                    key: Key(
-                        '${top == true ? 'from' : 'to'}ConversionCategoryUnitDropDown'),
-                    isDense: true,
-                    isExpanded: true,
-                    iconEnabledColor: Colors.grey.shade800,
-                    underline: Container(),
-                    onChanged: (value) {
-                      top == true
-                          ? converter.currentToUnit = value
-                          : converter.currentFromUnit = value;
-                    },
-                    items: conversionUnitTypes.map((conversionUnitType) {
-                      String conversionUnitTypeString =
-                          conversionStringValueMap[conversionUnitType];
-                      return DropdownMenuItem(
-                        value: conversionUnitType,
-                        key: Key(conversionUnitTypeString),
-                        child: Text(
-                          conversionUnitTypeString,
-                        ),
-                      );
-                    }).toList()),
-              ),
-            ],
-          ),
+                  ],
+                )
+              : Container(),
           SizedBox(
             height: screenPadding,
-          ),
-          Text(
-            '1 cm per square N - 15, 95940 dynes/cm 2 - 15, 95940 dynes/cm 2',
-            style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: ScreenUtil(allowFontScaling: false).setSp(35),
-            ),
-          ),
-          SizedBox(
-            height: screenPadding / 2,
           ),
           Text(
             "48484848",
@@ -272,6 +264,19 @@ class ConversionBox extends StatelessWidget {
               fontSize: ScreenUtil(allowFontScaling: false).setSp(85),
             ),
           ),
+          SizedBox(
+            height: screenPadding / 2,
+          ),
+          DropdownButton(
+            style: TextStyle(fontSize: 5, color: Colors.black),
+            items: (top == true ? fromUnitList : toUnitList).map((unit) {
+              return DropdownMenuItem(value: unit, child: Text('$unit'));
+            }).toList(),
+            value: top == true ? fromUnit : toUnit,
+            onChanged: (f) {
+              top == true ? converter.fromUnit = f : converter.toUnit = f;
+            },
+          )
         ],
       ),
     );

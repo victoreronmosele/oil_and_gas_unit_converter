@@ -86,7 +86,7 @@ void main() {
     });
 
     testWidgets(
-        'Tapping on a conversion categories drop down item changes populates unit dropdown buttons correctly',
+        'Tapping on a conversion categories drop down item changes populates unit type dropdown button correctly',
         (WidgetTester tester) async {
       await tester.pumpWidget(HomePageWrapper());
 
@@ -106,28 +106,18 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      var fromDropdownValueList = (fromConversionCategoryUnitDropdownFinder
-              .evaluate()
-              .single
-              .widget as DropdownButton)
-          .items
-          .map((item) => item.value)
-          .toList();
-      var toDropdownValueList = (toConversionCategoryUnitDropdownFinder
-              .evaluate()
-              .single
-              .widget as DropdownButton)
-          .items
-          .map((item) => item.value)
-          .toList();
+      var unitTypeDropdownValueList =
+          (unitTypeDropdownFinder.evaluate().single.widget as DropdownButton)
+              .items
+              .map((item) => item.value)
+              .toList();
 
       var conversionTypeModel =
           ConversionCategories.conversionCategoriesModelMap[conversionCategory];
 
-      var conversionUnitList = conversionTypeModel.conversionUnitTypes;
+      var conversionUnitTypeList = conversionTypeModel.conversionUnitTypes;
 
-      expect(fromDropdownValueList, conversionUnitList);
-      expect(toDropdownValueList, conversionUnitList);
+      expect(unitTypeDropdownValueList, conversionUnitTypeList);
     });
   });
 }

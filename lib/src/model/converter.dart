@@ -8,33 +8,70 @@ import 'package:oil_and_gas_unit_converter/src/model/units/conversion_operation.
 class Converter with ChangeNotifier {
   Conversions _currentConversionCategory;
 
-  dynamic get currentToUnit {
-    return _currentToUnit ??
-        ConversionCategories
-            .conversionCategoriesModelMap[_currentConversionCategory ??
-                ConversionCategories.conversionCategories.first]
-            .conversionUnitTypes
-            .first;
-  }
-
-  dynamic _currentToUnit;
-  set currentToUnit(dynamic currentUnitParam) {
-    _currentToUnit = currentUnitParam;
-    print('here $currentUnitParam');
+  set toUnit(dynamic toUnitParam) {
+    _toUnit = toUnitParam;
     notifyListeners();
   }
 
-  dynamic get currentFromUnit =>
-      _currentFromUnit ??
+  set fromUnit(dynamic fromUnitParam) {
+    _fromUnit = fromUnitParam;
+    notifyListeners();
+  }
+
+  dynamic _toUnit;
+  dynamic get toUnit => _toUnit ?? toUnitList.first;
+
+  List _toUnitList;
+
+  List get toUnitList =>
+      _toUnitList ??
+      ConversionCategories
+          .conversionCategoriesModelMap[currentConversionCategory]
+          .conversionUnitObjectMap[currentUnitType]
+          .unitValuesMap
+          .keys
+          .toList();
+
+  dynamic _fromUnit;
+
+  dynamic get fromUnit => _fromUnit ?? fromUnitList.first;
+
+  List _fromUnitList;
+
+  List get fromUnitList =>
+      _fromUnitList ??
+      ConversionCategories
+          .conversionCategoriesModelMap[currentConversionCategory]
+          .conversionUnitObjectMap[currentUnitType]
+          .unitValuesMap
+          .keys
+          .toList();
+
+  dynamic get currentUnitType =>
+      _currentUnitType ??
       ConversionCategories
           .conversionCategoriesModelMap[_currentConversionCategory ??
               ConversionCategories.conversionCategories.first]
           .conversionUnitTypes
           .first;
-  dynamic _currentFromUnit;
-  set currentFromUnit(dynamic currentFromUnitParam) {
-    _currentFromUnit = currentFromUnitParam;
-    print('here $currentFromUnitParam');
+  dynamic _currentUnitType;
+  set currentUnitType(dynamic currentUnitTypeParam) {
+    _currentUnitType = currentUnitTypeParam;
+    _fromUnitList = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[currentUnitTypeParam]
+        .unitValuesMap
+        .keys
+        .toList();
+    _toUnitList = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[currentUnitTypeParam]
+        .unitValuesMap
+        .keys
+        .toList();
+    _fromUnit = _fromUnitList.first;
+    _toUnit = _toUnitList.first;
+    print('here $currentUnitTypeParam');
     notifyListeners();
   }
 
@@ -45,14 +82,24 @@ class Converter with ChangeNotifier {
 
   set currentConversionCategory(Conversions conversionCategory) {
     _currentConversionCategory = conversionCategory;
-    _currentToUnit = ConversionCategories
+    _currentUnitType = ConversionCategories
         .conversionCategoriesModelMap[_currentConversionCategory]
         .conversionUnitTypes
         .first;
-    _currentFromUnit = ConversionCategories
-        .conversionCategoriesModelMap[_currentConversionCategory]
-        .conversionUnitTypes
-        .first;
+    _fromUnitList = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[_currentUnitType]
+        .unitValuesMap
+        .keys
+        .toList();
+    _toUnitList = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[_currentUnitType]
+        .unitValuesMap
+        .keys
+        .toList();
+    _fromUnit = _fromUnitList.first;
+    _toUnit = _toUnitList.first;
     notifyListeners();
   }
 
