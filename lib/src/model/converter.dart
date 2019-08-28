@@ -54,7 +54,9 @@ class Converter with ChangeNotifier {
               ConversionCategories.conversionCategories.first]
           .conversionUnitTypes
           .first;
+
   dynamic _currentUnitType;
+
   set currentUnitType(dynamic currentUnitTypeParam) {
     _currentUnitType = currentUnitTypeParam;
     _fromUnitList = ConversionCategories
@@ -69,6 +71,10 @@ class Converter with ChangeNotifier {
         .unitValuesMap
         .keys
         .toList();
+    _unitValuesMap = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[_currentUnitType]
+        .unitValuesMap;
     _fromUnit = _fromUnitList.first;
     _toUnit = _toUnitList.first;
     print('here $currentUnitTypeParam');
@@ -79,6 +85,15 @@ class Converter with ChangeNotifier {
       ConversionCategories.conversionCategoriesMap;
   List<Conversions> get conversionCategoriesList =>
       ConversionCategories.conversionCategories;
+
+  Map _unitValuesMap;
+
+  Map get unitValuesMap =>
+      _unitValuesMap ??
+      ConversionCategories
+          .conversionCategoriesModelMap[currentConversionCategory]
+          .conversionUnitObjectMap[currentUnitType]
+          .unitValuesMap;
 
   set currentConversionCategory(Conversions conversionCategory) {
     _currentConversionCategory = conversionCategory;
@@ -98,6 +113,10 @@ class Converter with ChangeNotifier {
         .unitValuesMap
         .keys
         .toList();
+    _unitValuesMap = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[_currentUnitType]
+        .unitValuesMap;
     _fromUnit = _fromUnitList.first;
     _toUnit = _toUnitList.first;
     notifyListeners();

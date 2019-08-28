@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
 
     return ChangeNotifierProvider<Converter>(
       builder: (context) => Converter(),
+      key: Key('changeNotifierProvider'),
       child: Scaffold(
         backgroundColor: Color.fromRGBO(18, 22, 28, 1),
         drawer: Drawer(),
@@ -210,6 +211,7 @@ class ConversionBox extends StatelessWidget {
     dynamic fromUnit = converter.fromUnit;
     List toUnitList = converter.toUnitList;
     dynamic toUnit = converter.toUnit;
+    Map unitValuesMap = converter.unitValuesMap;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -268,9 +270,15 @@ class ConversionBox extends StatelessWidget {
             height: screenPadding / 2,
           ),
           DropdownButton(
+            key: Key('${top == true ? 'from' : 'to'}Unit'),
             style: TextStyle(fontSize: 5, color: Colors.black),
             items: (top == true ? fromUnitList : toUnitList).map((unit) {
-              return DropdownMenuItem(value: unit, child: Text('$unit'));
+              String unitString = unitValuesMap[unit];
+              return DropdownMenuItem(
+                key: Key(unitString),
+                value: unit,
+                child: Text(unitString),
+              );
             }).toList(),
             value: top == true ? fromUnit : toUnit,
             onChanged: (f) {
