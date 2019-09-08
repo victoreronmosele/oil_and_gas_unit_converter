@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String title = 'Oil and Gas Converter';
-  final double screenPadding = AppConstants.screenPadding;
+  final double screenPadding = AppConstants.SCREEN_PADDING;
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +131,7 @@ class ConversionCard extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
-  final double screenPadding = AppConstants.screenPadding;
+  final double screenPadding = AppConstants.SCREEN_PADDING;
 
   @override
   Widget build(BuildContext context) {
@@ -192,14 +192,32 @@ class ConversionCard extends StatelessWidget {
   }
 }
 
-class ConversionBox extends StatelessWidget {
+class ConversionBox extends StatefulWidget {
   ConversionBox({
     Key key,
     this.top = false,
   }) : super(key: key);
 
-  final double screenPadding = AppConstants.screenPadding;
   final bool top;
+
+  @override
+  _ConversionBoxState createState() => _ConversionBoxState();
+}
+
+class _ConversionBoxState extends State<ConversionBox> {
+  final double screenPadding = AppConstants.SCREEN_PADDING;
+  TextEditingController textEditingController;
+  @override
+  void initState() {
+    super.initState();
+    textEditingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -213,17 +231,20 @@ class ConversionBox extends StatelessWidget {
     dynamic toUnit = converter.toUnit;
     Map unitValuesMap = converter.unitValuesMap;
 
+    textEditingController.text = widget.top == true
+        ? converter.fromUnitText.toString()
+        : converter.toUnitText.toString();
     return Padding(
       padding: EdgeInsets.only(
-          top: top == true ? 1.5 * screenPadding : screenPadding / 4,
-          bottom: top == true ? screenPadding / 4 : 1.5 * screenPadding,
+          top: widget.top == true ? 1.5 * screenPadding : screenPadding / 4,
+          bottom: widget.top == true ? screenPadding / 4 : 1.5 * screenPadding,
           right: 1.5 * screenPadding,
           left: 1.5 * screenPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          top == true
+          widget.top == true
               ? Row(
                   children: <Widget>[
                     Expanded(
@@ -260,8 +281,15 @@ class ConversionBox extends StatelessWidget {
           SizedBox(
             height: screenPadding,
           ),
-          Text(
-            "48484848",
+          TextField(
+            controller: textEditingController,
+            onChanged: (value) {
+              converter.fromUnitText = value;
+            },
+            keyboardType: TextInputType.numberWithOptions(
+              decimal: true,
+            ),
+            key: Key('${widget.top == true ? 'from' : 'to'}UnitText'),
             style: TextStyle(
               fontSize: ScreenUtil(allowFontScaling: false).setSp(85),
             ),
@@ -270,9 +298,9 @@ class ConversionBox extends StatelessWidget {
             height: screenPadding / 2,
           ),
           DropdownButton(
-            key: Key('${top == true ? 'from' : 'to'}Unit'),
+            key: Key('${widget.top == true ? 'from' : 'to'}Unit'),
             style: TextStyle(fontSize: 5, color: Colors.black),
-            items: (top == true ? fromUnitList : toUnitList).map((unit) {
+            items: (widget.top == true ? fromUnitList : toUnitList).map((unit) {
               String unitString = unitValuesMap[unit];
               return DropdownMenuItem(
                 key: Key(unitString),
@@ -280,9 +308,11 @@ class ConversionBox extends StatelessWidget {
                 child: Text(unitString),
               );
             }).toList(),
-            value: top == true ? fromUnit : toUnit,
+            value: widget.top == true ? fromUnit : toUnit,
             onChanged: (f) {
-              top == true ? converter.fromUnit = f : converter.toUnit = f;
+              widget.top == true
+                  ? converter.fromUnit = f
+                  : converter.toUnit = f;
             },
           )
         ],

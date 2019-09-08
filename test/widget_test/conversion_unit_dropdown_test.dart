@@ -90,8 +90,6 @@ void main() {
             .widget as ChangeNotifierProvider)
         .child;
 
-    List unitEnumValueList = FluidConsistencyUnit().unitValuesMap.keys.toList();
-
     Converter converter = Converter()
       ..currentConversionCategory = Conversions.fluid
       ..currentUnitType = FluidConversions.fluidConsistency;

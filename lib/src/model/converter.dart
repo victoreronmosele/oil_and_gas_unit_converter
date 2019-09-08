@@ -3,10 +3,42 @@ import 'package:meta/meta.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/model/conversions_categories.dart';
 import 'package:oil_and_gas_unit_converter/src/model/unit.dart';
+import 'package:oil_and_gas_unit_converter/src/model/units/basic_units/acceleration.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/conversion_operation.dart';
+import 'package:oil_and_gas_unit_converter/src/utils/app_constants.dart';
 
 class Converter with ChangeNotifier {
   Conversions _currentConversionCategory;
+
+  Unit _currentUnitObject;
+  Unit get currentUnitObject => _currentUnitObject ?? AccelerationUnit();
+  // ConversionCategories
+  //     .conversionCategoriesModelMap[currentConversionCategory]
+  //     .conversionUnitObjectMap[currentUnitType];
+
+  num _fromUnitText;
+  num _toUnitText;
+
+  String get fromUnitText =>
+      (_fromUnitText ?? AppConstants.DEFAULT_UNIT_VALUE).toString();
+
+  String get toUnitText {
+    ConversionOperation conversionOperation = ConversionOperation(
+        from: fromUnit,
+        to: toUnit,
+        unit: currentUnitObject,
+        valueToBeConverted: num.tryParse(fromUnitText));
+
+    _toUnitText = _getConvertedValue(conversionOperation);
+
+    return _toUnitText.toString();
+  }
+
+  set fromUnitText(String fromUnitText) {
+    num fromUnitNumber = num.tryParse(fromUnitText);
+    _fromUnitText = fromUnitNumber;
+    notifyListeners();
+  }
 
   set toUnit(dynamic toUnitParam) {
     _toUnit = toUnitParam;
@@ -59,6 +91,9 @@ class Converter with ChangeNotifier {
 
   set currentUnitType(dynamic currentUnitTypeParam) {
     _currentUnitType = currentUnitTypeParam;
+    _currentUnitObject = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[_currentUnitType];
     _fromUnitList = ConversionCategories
         .conversionCategoriesModelMap[currentConversionCategory]
         .conversionUnitObjectMap[currentUnitTypeParam]
@@ -101,6 +136,10 @@ class Converter with ChangeNotifier {
         .conversionCategoriesModelMap[_currentConversionCategory]
         .conversionUnitTypes
         .first;
+    _currentUnitObject = ConversionCategories
+        .conversionCategoriesModelMap[currentConversionCategory]
+        .conversionUnitObjectMap[_currentUnitType];
+
     _fromUnitList = ConversionCategories
         .conversionCategoriesModelMap[currentConversionCategory]
         .conversionUnitObjectMap[_currentUnitType]
@@ -152,12 +191,15 @@ class Converter with ChangeNotifier {
     num factor = _getFactor(from: from, to: to, unit: unit);
     num convertedResult = value * factor;
 
+    print('value $value');
+
     return convertedResult;
   }
 
-  num _getFactor<T>({@required T from, @required T to, Unit unit}) {
+  num _getFactor<T>({@required T from, @required T to, @required Unit unit}) {
     num factor;
-    factor = 1 / (unit.unitFactorMap[from] * unit.unitFactorMap[to]);
+    factor = unit.unitFactorMap[to] / unit.unitFactorMap[from];
+
     return factor;
   }
 }
