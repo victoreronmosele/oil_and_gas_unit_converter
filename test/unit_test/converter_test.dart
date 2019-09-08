@@ -5,12 +5,13 @@ import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/conversion_operation.dart';
 import 'package:test/test.dart';
 
+//TODO Have a setting to change decimal rounding
 void main() {
   group('Converter', () {
     test('Converter works properly', () {
       Converter converter = Converter();
       num valueToBeConverted = 100;
-      num expectedValue = 3047.999902464003;
+      num expectedValue = 3.28084;
 
       ConversionOperation conversionOperation = ConversionOperation(
           valueToBeConverted: valueToBeConverted,
