@@ -6,6 +6,7 @@ import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_cons
 import 'package:oil_and_gas_unit_converter/src/model/conversions_categories.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/fluid_consistency.dart';
+import 'package:oil_and_gas_unit_converter/src/ui/fix_dropdown.dart';
 import 'package:provider/provider.dart';
 
 import 'widget_test_data/finders.dart';
@@ -63,16 +64,22 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    final fromUnitDropdownEnumValueList =
-        (find.byKey(Key('fromUnit')).evaluate().single.widget as DropdownButton)
-            .items
-            .map((unit) => unit.value)
-            .toList();
-    final toUnitDropdownEnumValueList =
-        (find.byKey(Key('fromUnit')).evaluate().single.widget as DropdownButton)
-            .items
-            .map((unit) => unit.value)
-            .toList();
+    final fromUnitDropdownEnumValueList = (find
+            .byKey(Key('fromUnit'))
+            .evaluate()
+            .single
+            .widget as FixDropdownButton)
+        .items
+        .map((unit) => unit.value)
+        .toList();
+    final toUnitDropdownEnumValueList = (find
+            .byKey(Key('fromUnit'))
+            .evaluate()
+            .single
+            .widget as FixDropdownButton)
+        .items
+        .map((unit) => unit.value)
+        .toList();
 
     expect(fromUnitDropdownEnumValueList, unitEnumValueList);
     expect(toUnitDropdownEnumValueList, unitEnumValueList);
@@ -108,9 +115,9 @@ void main() {
     await tester.tap(find.byKey(Key('Pa-s^n(Pa-s^n)')).last);
     await tester.pumpAndSettle();
 
-    final fromUnitValue =
-        (find.byKey(Key('fromUnit')).evaluate().single.widget as DropdownButton)
-            .value;
+    final fromUnitValue = (find.byKey(Key('fromUnit')).evaluate().single.widget
+            as FixDropdownButton)
+        .value;
     final expectedFromUnitValue = FluidConsistency.paSn;
     expect(fromUnitValue, expectedFromUnitValue);
 
@@ -120,9 +127,9 @@ void main() {
     await tester.tap(find.byKey(Key('eq.cp(eq.cp)')).last);
     await tester.pumpAndSettle();
 
-    final toUnitValue =
-        (find.byKey(Key('fromUnit')).evaluate().single.widget as DropdownButton)
-            .value;
+    final toUnitValue = (find.byKey(Key('fromUnit')).evaluate().single.widget
+            as FixDropdownButton)
+        .value;
     final expectedToUnitValue = FluidConsistency.paSn;
     expect(toUnitValue, expectedToUnitValue);
   });
