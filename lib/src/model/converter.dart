@@ -112,7 +112,6 @@ class Converter with ChangeNotifier {
         .unitValuesMap;
     _fromUnit = _fromUnitList.first;
     _toUnit = _toUnitList.first;
-    print('here $currentUnitTypeParam');
     notifyListeners();
   }
 
@@ -190,8 +189,6 @@ class Converter with ChangeNotifier {
 
     num factor = _getFactor(from: from, to: to, unit: unit);
     num convertedResult = value * factor;
-
-    print('value $value');
 
     return convertedResult;
   }

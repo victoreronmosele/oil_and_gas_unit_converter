@@ -1,5 +1,3 @@
-import 'dart:io' show Platform;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,8 +22,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil()..init(context);
 
-    print(
-        'Screen size is ${MediaQuery.of(context).size} on ${Platform.operatingSystem}');
 
     return ChangeNotifierProvider<Converter>(
       builder: (context) => Converter(),
@@ -96,8 +92,10 @@ class ConversionTopPanel extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
               child: DropdownButton<Conversions>(
-                  style: TextStyle(color: Colors.red),
-                  value: currentConversionCategory,
+                  //Value is set to null and the hint is used to display selected dropdown item
+                  //so as to use different TextStyle properties for the selected value and the dropdown items
+                  //And the default behaviour is that both make use of the same TextStyle property
+                  value: null,
                   key: Key('conversionCategoryDropdown'),
                   isDense: true,
                   iconEnabledColor: Colors.grey.shade800,
@@ -105,6 +103,10 @@ class ConversionTopPanel extends StatelessWidget {
                   onChanged: (value) {
                     converter.currentConversionCategory = value;
                   },
+                  hint: Text(
+                    conversionCategoriesMap[currentConversionCategory],
+                    style: TextStyle(color: Colors.white),
+                  ),
                   items: conversionCategoriesList.map((conversionCategory) {
                     String conversionCategoryText =
                         conversionCategoriesMap[conversionCategory];
@@ -115,6 +117,7 @@ class ConversionTopPanel extends StatelessWidget {
                       child: Text(
                         conversionCategoryText,
                         overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Colors.black),
                       ),
                     );
                   }).toList()),
@@ -206,16 +209,20 @@ class ConversionBox extends StatefulWidget {
 
 class _ConversionBoxState extends State<ConversionBox> {
   final double screenPadding = AppConstants.SCREEN_PADDING;
-  TextEditingController textEditingController;
+  TextEditingController fromTextEditingController;
+  TextEditingController toTextEditingController;
+
   @override
   void initState() {
     super.initState();
-    textEditingController = TextEditingController();
+    fromTextEditingController = TextEditingController();
+    toTextEditingController = TextEditingController();
   }
 
   @override
   void dispose() {
-    textEditingController.dispose();
+    fromTextEditingController.dispose();
+    toTextEditingController.dispose();
     super.dispose();
   }
 
@@ -231,9 +238,8 @@ class _ConversionBoxState extends State<ConversionBox> {
     dynamic toUnit = converter.toUnit;
     Map unitValuesMap = converter.unitValuesMap;
 
-    textEditingController.text = widget.top == true
-        ? converter.fromUnitText.toString()
-        : converter.toUnitText.toString();
+    fromTextEditingController.text = converter.fromUnitText.toString();
+    toTextEditingController.text = converter.toUnitText.toString();
     return Padding(
       padding: EdgeInsets.only(
           top: widget.top == true ? 1.5 * screenPadding : screenPadding / 4,
@@ -282,13 +288,17 @@ class _ConversionBoxState extends State<ConversionBox> {
             height: screenPadding,
           ),
           TextField(
-            controller: textEditingController,
+            decoration: InputDecoration.collapsed(hintText: null),
+            controller: widget.top == true
+                ? fromTextEditingController
+                : toTextEditingController,
             onChanged: (value) {
-              converter.fromUnitText = value;
+              widget.top == true ? converter.fromUnitText = value : null;
             },
             keyboardType: TextInputType.numberWithOptions(
               decimal: true,
             ),
+            enabled: widget.top == true ? true : false,
             key: Key('${widget.top == true ? 'from' : 'to'}UnitText'),
             style: TextStyle(
               fontSize: ScreenUtil(allowFontScaling: false).setSp(85),
@@ -305,7 +315,12 @@ class _ConversionBoxState extends State<ConversionBox> {
               return DropdownMenuItem(
                 key: Key(unitString),
                 value: unit,
-                child: Text(unitString),
+                child: Text(
+                  unitString,
+                  style: TextStyle(
+                    fontSize: ScreenUtil(allowFontScaling: false).setSp(10),
+                  ),
+                ),
               );
             }).toList(),
             value: widget.top == true ? fromUnit : toUnit,

@@ -18,12 +18,16 @@ void main() {
       expect(conversionCategoryDropdownFinder, findsOneWidget);
 
       final conversionCategoryDropdownCurrentValue =
-          conversionCategoryDropdownWidget.value;
+          (conversionCategoryDropdownWidget.hint as Text).data;
 
       final firstConversionCategory =
           ConversionCategories.conversionCategories.first;
 
-      expect(conversionCategoryDropdownCurrentValue, firstConversionCategory);
+      final firstConversionCategoryString =
+          ConversionCategories.conversionCategoriesMap[firstConversionCategory];
+
+      expect(conversionCategoryDropdownCurrentValue,
+          firstConversionCategoryString);
     });
 
     testWidgets(
@@ -78,11 +82,12 @@ void main() {
       await tester.pumpAndSettle();
 
       var conversionCategoryDropdownCurrentValue =
-          (conversionCategoryDropdownFinder.evaluate().single.widget
-                  as DropdownButton)
-              .value;
+          (((conversionCategoryDropdownFinder.evaluate().single.widget
+                      as DropdownButton)
+                  .hint) as Text)
+              .data;
 
-      expect(conversionCategoryDropdownCurrentValue, conversionCategory);
+      expect(conversionCategoryDropdownCurrentValue, conversionCategoryString);
     });
 
     testWidgets(
