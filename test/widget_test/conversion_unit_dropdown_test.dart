@@ -6,7 +6,6 @@ import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_cons
 import 'package:oil_and_gas_unit_converter/src/model/conversions_categories.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/fluid_consistency.dart';
-import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/fluid_velocity.dart';
 import 'package:provider/provider.dart';
 
 import 'widget_test_data/finders.dart';

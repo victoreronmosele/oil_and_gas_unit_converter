@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil()..init(context);
 
-
     return ChangeNotifierProvider<Converter>(
       builder: (context) => Converter(),
       key: Key('changeNotifierProvider'),
@@ -238,7 +237,8 @@ class _ConversionBoxState extends State<ConversionBox> {
     dynamic toUnit = converter.toUnit;
     Map unitValuesMap = converter.unitValuesMap;
 
-    fromTextEditingController.text = converter.fromUnitText.toString();
+    fromTextEditingController.value = fromTextEditingController.value
+        .copyWith(text: converter.fromUnitText.toString());
     toTextEditingController.text = converter.toUnitText.toString();
     return Padding(
       padding: EdgeInsets.only(
@@ -293,7 +293,10 @@ class _ConversionBoxState extends State<ConversionBox> {
                 ? fromTextEditingController
                 : toTextEditingController,
             onChanged: (value) {
-              widget.top == true ? converter.fromUnitText = value : null;
+              print(fromTextEditingController.selection);
+              if (widget.top == true) {
+                converter.fromUnitText = value;
+              }
             },
             keyboardType: TextInputType.numberWithOptions(
               decimal: true,
