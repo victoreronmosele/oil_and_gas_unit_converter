@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/data/keys.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
-import 'package:oil_and_gas_unit_converter/src/ui/fix_dropdown.dart';
+import 'package:oil_and_gas_unit_converter/src/ui/fix_dropdown.dart'
+    as fixDropdown;
 import 'package:oil_and_gas_unit_converter/src/utils/app_constants.dart';
 import 'package:provider/provider.dart';
 
@@ -98,7 +99,7 @@ class ConversionTopPanel extends StatelessWidget {
                   value: null,
                   key: Key('conversionCategoryDropdown'),
                   isDense: true,
-                  iconEnabledColor: Colors.grey.shade800,
+                  iconEnabledColor: Colors.white54,
                   underline: Container(),
                   onChanged: (value) {
                     converter.currentConversionCategory = value;
@@ -311,18 +312,22 @@ class _ConversionBoxState extends State<ConversionBox> {
           SizedBox(
             height: screenPadding / 2,
           ),
-          FixDropdownButton(
+          fixDropdown.FixDropdownButton(
             key: Key('${widget.top == true ? 'from' : 'to'}Unit'),
             style: TextStyle(fontSize: 5, color: Colors.black),
+            underline: Container(),
             items: (widget.top == true ? fromUnitList : toUnitList).map((unit) {
               String unitString = unitValuesMap[unit];
-              return FixDropdownMenuItem(
+              return fixDropdown.FixDropdownMenuItem(
                 key: Key(unitString),
                 value: unit,
-                child: Text(
-                  unitString,
-                  style: TextStyle(
-                    fontSize: ScreenUtil(allowFontScaling: false).setSp(40),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    unitString,
+                    style: TextStyle(
+                      fontSize: ScreenUtil(allowFontScaling: false).setSp(40),
+                    ),
                   ),
                 ),
               );

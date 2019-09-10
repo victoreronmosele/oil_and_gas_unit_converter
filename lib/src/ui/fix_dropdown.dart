@@ -486,6 +486,7 @@ class FixDropdownButton<T> extends StatefulWidget {
     @required this.items,
     this.value,
     this.hint,
+    this.underline,
     @required this.onChanged,
     this.elevation = 8,
     this.style,
@@ -526,6 +527,11 @@ class FixDropdownButton<T> extends StatefulWidget {
   /// Defaults to the [TextTheme.subhead] value of the current
   /// [ThemeData.textTheme] of the current [Theme].
   final TextStyle style;
+
+  /// The widget to use for drawing the drop-down button's underline.
+  ///
+  /// Defaults to a 0.0 width bottom border with color 0xFFBDBDBD.
+  final Widget underline;
 
   /// The size to use for the drop-down button's down arrow icon button.
   ///
@@ -700,13 +706,14 @@ class _DropdownButtonState<T> extends State<FixDropdownButton<T>>
             left: 0.0,
             right: 0.0,
             bottom: bottom,
-            child: new Container(
-              height: 1.0,
-              decoration: const BoxDecoration(
-                  border: Border(
-                      bottom:
-                          BorderSide(color: Color(0xFFBDBDBD), width: 0.0))),
-            ),
+            child: widget.underline ??
+                Container(
+                  height: 1.0,
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(
+                              color: Color(0xFFBDBDBD), width: 0.0))),
+                ),
           ),
         ],
       );
