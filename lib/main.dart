@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:oil_and_gas_unit_converter/src/ui/home_page.dart';
+import 'package:oil_and_gas_unit_converter/src/screens/home_page.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,8 +1,15 @@
 import 'package:flutter/widgets.dart';
 
-final conversionCategoryDropdownKey = Key('conversionCategoryDropdown');
-final gasDropdownMenuItemKey = Key('Gas');
-final unitTypeDropdownKey = Key('unitTypeDropDown');
-
-final fromUnitDropdownKey = Key('fromUnit');
-final toUnitDropdownKey = Key('toUnit');
+class WidgetKeys {
+  static final conversionCategoryDropdownKey =
+      Key('conversionCategoryDropdown');
+  static final gasDropdownMenuItemKey = Key('Gas');
+  static final unitTypeDropdownKey = Key('unitTypeDropDown');
+  static final fromUnitDropdownKey = Key('fromUnit');
+  static final toUnitDropdownKey = Key('toUnit');
+  static final changeNotifierProviderKey = Key('changeNotifierProvider');
+  static final fromUnitText = Key('fromUnitText');
+  static final toUnitText = Key('toUnitText');
+  static final toUnit = Key('toUnit');
+  static final fromUnit = Key('fromUnit');
+}

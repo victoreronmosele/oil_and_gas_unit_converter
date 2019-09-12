@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:oil_and_gas_unit_converter/src/data/app_dimens.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions/gas_conversions.dart';
+import 'package:oil_and_gas_unit_converter/src/data/keys.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/gas_units/specific_volume.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
-import 'package:oil_and_gas_unit_converter/src/utils/app_constants.dart';
+import 'package:oil_and_gas_unit_converter/src/data/app_constants.dart';
 import 'package:provider/provider.dart';
 
 import 'widget_test_data/widgets.dart';
@@ -15,10 +17,13 @@ void main() {
     await tester.pumpWidget(HomePageWrapper());
     await tester.pumpAndSettle();
 
-    String fromUnitText =
-        (find.byKey(Key('fromUnitText')).evaluate().single.widget as TextField)
-            .controller
-            .text;
+    String fromUnitText = (find
+            .byKey(WidgetKeys.fromUnitText)
+            .evaluate()
+            .single
+            .widget as TextField)
+        .controller
+        .text;
 
     String defaultUnitValue = AppConstants.DEFAULT_UNIT_VALUE.toString();
 
@@ -31,7 +36,7 @@ void main() {
     await tester.pumpWidget(HomePageWrapper());
 
     final child = (find
-            .byKey(Key('changeNotifierProvider'))
+            .byKey(WidgetKeys.changeNotifierProviderKey)
             .evaluate()
             .single
             .widget as ChangeNotifierProvider)
@@ -52,13 +57,16 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    await tester.enterText(find.byKey(Key('fromUnitText')), '500');
+    await tester.enterText(find.byKey(WidgetKeys.fromUnitText), '500');
     await tester.pumpAndSettle();
 
-    String toUnitText =
-        (find.byKey(Key('toUnitText')).evaluate().single.widget as TextField)
-            .controller
-            .text;
+    String toUnitText = (find
+            .byKey(WidgetKeys.toUnitText)
+            .evaluate()
+            .single
+            .widget as TextField)
+        .controller
+        .text;
 
     String convertedResult = '0.07825';
 
