@@ -18,7 +18,7 @@ void main() {
       expect(conversionCategoryDropdownFinder, findsOneWidget);
 
       final conversionCategoryDropdownCurrentValue =
-          (conversionCategoryDropdownWidget.hint as Text).data;
+          (Widgets.conversionCategoryDropdownWidget.hint as Text).data;
 
       final firstConversionCategory =
           ConversionCategories.conversionCategories.first;
@@ -34,8 +34,9 @@ void main() {
         'Conversion categories dropdown contains correct categories enum values',
         (WidgetTester tester) async {
       await tester.pumpWidget(HomePageWrapper());
-      final conversionCategoryDropdownValueList =
-          conversionCategoryDropdownWidget.items.map((item) => item.value);
+      final conversionCategoryDropdownValueList = Widgets
+          .conversionCategoryDropdownWidget.items
+          .map((item) => item.value);
 
       final conversionCategoryEnumValueList =
           ConversionCategories.conversionCategories;
@@ -48,9 +49,9 @@ void main() {
         'Conversion categories dropdown contains correct categories string values',
         (WidgetTester tester) async {
       await tester.pumpWidget(HomePageWrapper());
-      final conversionCategoryDropdownTextValueList =
-          conversionCategoryDropdownWidget.items
-              .map((item) => (item.child as Text).data);
+      final conversionCategoryDropdownTextValueList = Widgets
+          .conversionCategoryDropdownWidget.items
+          .map((item) => (item.child as Text).data);
 
       final conversionCategoryStringValueList =
           ConversionCategories.conversionCategoriesMap.values;

@@ -1,20 +1,21 @@
 import 'package:flutter/foundation.dart';
 import 'package:meta/meta.dart';
+import 'package:oil_and_gas_unit_converter/src/data/app_dimens.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/model/conversions_categories.dart';
 import 'package:oil_and_gas_unit_converter/src/model/unit.dart';
-import 'package:oil_and_gas_unit_converter/src/model/units/basic_units/acceleration.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/conversion_operation.dart';
-import 'package:oil_and_gas_unit_converter/src/utils/app_constants.dart';
+import 'package:oil_and_gas_unit_converter/src/data/app_constants.dart';
 
 class Converter with ChangeNotifier {
   Conversions _currentConversionCategory;
 
   Unit _currentUnitObject;
-  Unit get currentUnitObject => _currentUnitObject ?? AccelerationUnit();
-  // ConversionCategories
-  //     .conversionCategoriesModelMap[currentConversionCategory]
-  //     .conversionUnitObjectMap[currentUnitType];
+  Unit get currentUnitObject =>
+      _currentUnitObject ??
+      ConversionCategories
+          .conversionCategoriesModelMap[currentConversionCategory]
+          .conversionUnitObjectMap[currentUnitType];
 
   num _fromUnitText;
   num _toUnitText;

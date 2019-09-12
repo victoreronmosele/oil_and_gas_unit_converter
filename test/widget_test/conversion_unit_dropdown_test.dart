@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions/fluid_conversions.dart';
+import 'package:oil_and_gas_unit_converter/src/data/keys.dart';
 import 'package:oil_and_gas_unit_converter/src/data/units/fluid_units/fluid_consistency.dart';
 import 'package:oil_and_gas_unit_converter/src/model/conversions_categories.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
 import 'package:oil_and_gas_unit_converter/src/model/units/fluid_units/fluid_consistency.dart';
-import 'package:oil_and_gas_unit_converter/src/ui/fix_dropdown.dart';
+import 'package:oil_and_gas_unit_converter/src/widgets/fix_dropdown.dart';
 import 'package:provider/provider.dart';
 
 import 'widget_test_data/finders.dart';
@@ -20,8 +21,8 @@ void main() {
 
     expect(unitTypeDropdownFinder, findsOneWidget);
 
-    final fromUnitEnumValue = fromUnitDropdownWidget.value;
-    final toUnitEnumValue = toUnitDropdownWidget.value;
+    final fromUnitEnumValue = Widgets.fromUnitDropdownWidget.value;
+    final toUnitEnumValue = Widgets.toUnitDropdownWidget.value;
 
     final firstConversionCategory =
         ConversionCategories.conversionCategories.first;
@@ -43,7 +44,7 @@ void main() {
     await tester.pumpWidget(HomePageWrapper());
 
     final child = (find
-            .byKey(Key('changeNotifierProvider'))
+            .byKey(WidgetKeys.changeNotifierProviderKey)
             .evaluate()
             .single
             .widget as ChangeNotifierProvider)
@@ -65,7 +66,7 @@ void main() {
     await tester.pumpAndSettle();
 
     final fromUnitDropdownEnumValueList = (find
-            .byKey(Key('fromUnit'))
+            .byKey(WidgetKeys.fromUnitDropdownKey)
             .evaluate()
             .single
             .widget as FixDropdownButton)
@@ -73,7 +74,7 @@ void main() {
         .map((unit) => unit.value)
         .toList();
     final toUnitDropdownEnumValueList = (find
-            .byKey(Key('fromUnit'))
+            .byKey(WidgetKeys.toUnitDropdownKey)
             .evaluate()
             .single
             .widget as FixDropdownButton)
@@ -90,7 +91,7 @@ void main() {
     await tester.pumpWidget(HomePageWrapper());
 
     final child = (find
-            .byKey(Key('changeNotifierProvider'))
+            .byKey(WidgetKeys.changeNotifierProviderKey)
             .evaluate()
             .single
             .widget as ChangeNotifierProvider)
@@ -109,26 +110,32 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byKey(Key('fromUnit')));
+    await tester.tap(find.byKey(WidgetKeys.fromUnitDropdownKey));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byKey(Key('Pa-s^n(Pa-s^n)')).last);
     await tester.pumpAndSettle();
 
-    final fromUnitValue = (find.byKey(Key('fromUnit')).evaluate().single.widget
-            as FixDropdownButton)
+    final fromUnitValue = (find
+            .byKey(WidgetKeys.fromUnitDropdownKey)
+            .evaluate()
+            .single
+            .widget as FixDropdownButton)
         .value;
     final expectedFromUnitValue = FluidConsistency.paSn;
     expect(fromUnitValue, expectedFromUnitValue);
 
-    await tester.tap(find.byKey(Key('toUnit')));
+    await tester.tap(find.byKey(WidgetKeys.toUnitDropdownKey));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byKey(Key('eq.cp(eq.cp)')).last);
     await tester.pumpAndSettle();
 
-    final toUnitValue = (find.byKey(Key('fromUnit')).evaluate().single.widget
-            as FixDropdownButton)
+    final toUnitValue = (find
+            .byKey(WidgetKeys.fromUnitDropdownKey)
+            .evaluate()
+            .single
+            .widget as FixDropdownButton)
         .value;
     final expectedToUnitValue = FluidConsistency.paSn;
     expect(toUnitValue, expectedToUnitValue);

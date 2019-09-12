@@ -16,7 +16,7 @@ void main() {
     await tester.pumpWidget(HomePageWrapper());
     expect(unitTypeDropdownFinder, findsOneWidget);
 
-    final unitTypeValue = unitTypeDropdownWidget.value;
+    final unitTypeValue = Widgets.unitTypeDropdownWidget.value;
 
     final firstConversionCategory =
         ConversionCategories.conversionCategories.first;

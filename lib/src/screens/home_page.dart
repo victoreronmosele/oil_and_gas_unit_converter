@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oil_and_gas_unit_converter/src/data/app_colors.dart';
+import 'package:oil_and_gas_unit_converter/src/data/app_dimens.dart';
+import 'package:oil_and_gas_unit_converter/src/data/app_strings.dart';
 import 'package:oil_and_gas_unit_converter/src/data/conversions.dart';
 import 'package:oil_and_gas_unit_converter/src/data/keys.dart';
 import 'package:oil_and_gas_unit_converter/src/model/converter.dart';
-import 'package:oil_and_gas_unit_converter/src/ui/fix_dropdown.dart'
+
+import 'package:oil_and_gas_unit_converter/src/widgets/round_converter_icon.dart';
+import 'package:oil_and_gas_unit_converter/src/widgets/fix_dropdown.dart'
     as fixDropdown;
-import 'package:oil_and_gas_unit_converter/src/utils/app_constants.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,8 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String title = 'Oil and Gas Converter';
-  final double screenPadding = AppConstants.SCREEN_PADDING;
+  String title = AppStrings.APP_TITLE;
+  final double screenPadding = AppDimens.SCREEN_PADDING;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +30,10 @@ class _HomePageState extends State<HomePage> {
 
     return ChangeNotifierProvider<Converter>(
       builder: (context) => Converter(),
-      key: Key('changeNotifierProvider'),
+      key: WidgetKeys.changeNotifierProviderKey,
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(18, 22, 28, 1),
-        drawer: Drawer(),
+        backgroundColor: AppColors.BACKGROUND_COLOR,
+        //TODO Add drawer for Android and bottom tab for iOS
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
@@ -44,7 +48,8 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(
-                      bottom: ScreenUtil.getInstance().setHeight(50.0),
+                      bottom: ScreenUtil.getInstance()
+                          .setHeight(AppDimens.CONVERSION_BOTTOM_PADDING),
                     ),
                     child: ConversionTopPanel(),
                   ),
@@ -75,7 +80,7 @@ class ConversionTopPanel extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(
-          'Convert',
+          AppStrings.CONVERT,
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil(allowFontScaling: false).setSp(80),
@@ -97,7 +102,7 @@ class ConversionTopPanel extends StatelessWidget {
                   //so as to use different TextStyle properties for the selected value and the dropdown items
                   //And the default behaviour is that both make use of the same TextStyle property
                   value: null,
-                  key: Key('conversionCategoryDropdown'),
+                  key: WidgetKeys.conversionCategoryDropdownKey,
                   isDense: true,
                   iconEnabledColor: Colors.white54,
                   underline: Container(),
@@ -135,7 +140,7 @@ class ConversionCard extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
-  final double screenPadding = AppConstants.SCREEN_PADDING;
+  final double screenPadding = AppDimens.SCREEN_PADDING;
 
   @override
   Widget build(BuildContext context) {
@@ -209,7 +214,7 @@ class ConversionBox extends StatefulWidget {
 }
 
 class _ConversionBoxState extends State<ConversionBox> {
-  final double screenPadding = AppConstants.SCREEN_PADDING;
+  final double screenPadding = AppDimens.SCREEN_PADDING;
   TextEditingController fromTextEditingController;
   TextEditingController toTextEditingController;
 
@@ -263,7 +268,7 @@ class _ConversionBoxState extends State<ConversionBox> {
                                 ScreenUtil(allowFontScaling: false).setSp(50),
                           ),
                           value: conversionUnitTypeValue,
-                          key: unitTypeDropdownKey,
+                          key: WidgetKeys.unitTypeDropdownKey,
                           isDense: true,
                           isExpanded: true,
                           iconEnabledColor: Colors.grey.shade800,
@@ -304,7 +309,9 @@ class _ConversionBoxState extends State<ConversionBox> {
               decimal: true,
             ),
             enabled: widget.top == true ? true : false,
-            key: Key('${widget.top == true ? 'from' : 'to'}UnitText'),
+            key: widget.top == true
+                ? WidgetKeys.fromUnitText
+                : WidgetKeys.toUnitText,
             style: TextStyle(
               fontSize: ScreenUtil(allowFontScaling: false).setSp(85),
             ),
@@ -313,7 +320,7 @@ class _ConversionBoxState extends State<ConversionBox> {
             height: screenPadding / 2,
           ),
           fixDropdown.FixDropdownButton(
-            key: Key('${widget.top == true ? 'from' : 'to'}Unit'),
+            key: widget.top == true ? WidgetKeys.fromUnit : WidgetKeys.toUnit,
             style: TextStyle(fontSize: 5, color: Colors.black),
             underline: Container(),
             items: (widget.top == true ? fromUnitList : toUnitList).map((unit) {
@@ -340,39 +347,6 @@ class _ConversionBoxState extends State<ConversionBox> {
             },
           )
         ],
-      ),
-    );
-  }
-}
-
-class RoundConverterIcon extends StatelessWidget {
-  const RoundConverterIcon({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      elevation: 4.0,
-      shape: CircleBorder(),
-      clipBehavior: Clip.antiAlias,
-      child: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Color.fromRGBO(0, 198, 255, 1),
-            Color.fromRGBO(0, 114, 255, 1),
-          ],
-        )),
-        child: RotatedBox(
-            quarterTurns: 1,
-            child: Icon(
-              Icons.compare_arrows,
-              size: ScreenUtil.getInstance().setHeight(60.0),
-              color: Colors.white,
-            )),
       ),
     );
   }
